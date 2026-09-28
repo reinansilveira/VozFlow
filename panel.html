@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Voz Pronta</title>
+  <link rel="stylesheet" href="panel.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand__icon">◖</span><div><strong>Voz Pronta</strong><small>Mensagens que soam naturais</small></div></div>
+    <button class="icon-button" id="close" aria-label="Fechar">×</button>
+  </header>
+
+  <nav class="tabs" aria-label="Seções">
+    <button class="tab is-active" data-tab="audios">Áudios</button>
+    <button class="tab" data-tab="images">Imagens</button>
+    <button class="tab" data-tab="funnels">Funis</button>
+    <button class="tab" data-tab="activity">Atividade <span id="active-count" hidden></span></button>
+  </nav>
+
+  <main>
+    <section class="view is-active" id="view-audios">
+      <div class="hero">
+        <span class="eyebrow">BIBLIOTECA</span>
+        <h1>Seus áudios, sempre prontos.</h1>
+        <p>Salvos no navegador e convertidos para funcionar no WhatsApp do celular.</p>
+      </div>
+
+      <form class="upload-card" id="audio-form">
+        <label class="dropzone" for="audio-file">
+          <span class="dropzone__icon">＋</span>
+          <strong>Adicionar áudio</strong>
+          <small>MP3, WAV, M4A, AAC ou OGG · até 32 MB</small>
+        </label>
+        <input id="audio-file" type="file" accept="audio/*,.mp3,.wav,.m4a,.aac,.ogg,.opus" hidden>
+        <div class="upload-fields" hidden>
+          <label>Nome do áudio<input id="audio-name" maxlength="60" placeholder="Ex.: Apresentação inicial" required></label>
+          <div class="file-chip"><span id="chosen-file"></span><button type="button" id="cancel-file">Remover</button></div>
+          <button class="primary" type="submit" id="save-audio">Converter e salvar</button>
+        </div>
+        <div class="progress" id="convert-progress" hidden><span></span><small>Convertendo para OGG/Opus…</small></div>
+      </form>
+
+      <div class="section-head"><div><h2>Áudios salvos</h2><span id="audio-count">0 itens</span></div></div>
+      <div class="card-list" id="audio-list"></div>
+    </section>
+
+    <section class="view" id="view-images">
+      <div class="hero hero--compact">
+        <span class="eyebrow">GALERIA</span>
+        <h1>Imagens prontas para enviar.</h1>
+        <p>Adicione, nomeie e reutilize imagens sem procurar o arquivo novamente.</p>
+      </div>
+      <form class="upload-card" id="image-form">
+        <label class="dropzone" for="image-file">
+          <span class="dropzone__icon">＋</span>
+          <strong>Adicionar imagem</strong>
+          <small>JPG, PNG, WEBP ou GIF · até 16 MB</small>
+        </label>
+        <input id="image-file" type="file" accept="image/jpeg,image/png,image/webp,image/gif" hidden>
+        <div class="image-fields" hidden>
+          <img id="image-preview" alt="Prévia da imagem">
+          <label>Nome da imagem<input id="image-name" maxlength="60" placeholder="Ex.: Tabela de preços" required></label>
+          <div class="file-chip"><span id="chosen-image"></span><button type="button" id="cancel-image">Remover</button></div>
+          <button class="primary" type="submit">Salvar imagem</button>
+        </div>
+      </form>
+      <div class="section-head"><div><h2>Imagens salvas</h2><span id="image-count">0 itens</span></div></div>
+      <div class="image-grid" id="image-list"></div>
+    </section>
+
+    <section class="view" id="view-funnels">
+      <div class="hero hero--compact">
+        <span class="eyebrow">AUTOMAÇÃO</span>
+        <h1>Crie uma sequência natural.</h1>
+        <p>Cada espera mostra “gravando áudio…” antes do próximo envio.</p>
+      </div>
+
+      <form class="funnel-builder" id="funnel-form">
+        <label>Nome do funil<input id="funnel-name" maxlength="60" placeholder="Ex.: Primeiro contato" required></label>
+        <div class="builder-head"><strong>Etapas</strong><button class="text-button" type="button" id="add-step">+ Adicionar</button></div>
+        <div id="funnel-steps"></div>
+        <button class="primary" type="submit">Salvar funil</button>
+      </form>
+
+      <div class="section-head"><div><h2>Funis salvos</h2><span id="funnel-count">0 itens</span></div></div>
+      <div class="card-list" id="funnel-list"></div>
+    </section>
+
+    <section class="view" id="view-activity">
+      <div class="hero hero--compact">
+        <span class="eyebrow">EM ANDAMENTO</span>
+        <h1>Funis ativos.</h1>
+        <p>Você pode iniciar um funil em uma conversa, trocar de chat e iniciar outro.</p>
+      </div>
+      <div class="card-list" id="activity-list"></div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" hidden></div>
+  <script src="vendor/opus-prelude.js"></script>
+  <script src="vendor/opus-encoder-lib.js"></script>
+  <script src="panel.js"></script>
+</body>
+</html>

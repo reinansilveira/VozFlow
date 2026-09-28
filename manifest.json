@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "Voz Pronta para WhatsApp",
+  "version": "1.1.0",
+  "description": "Bibliotecas de áudio e imagem com funis de áudio, texto e mídia no WhatsApp Web.",
+  "minimum_chrome_version": "111",
+  "permissions": ["scripting"],
+  "host_permissions": ["https://web.whatsapp.com/*"],
+  "action": {
+    "default_title": "Abrir Voz Pronta"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'; worker-src 'self';"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://web.whatsapp.com/*"],
+      "js": ["vendor/wppconnect-wa.js", "main-world.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": ["https://web.whatsapp.com/*"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["panel.html", "panel.css", "panel.js", "vendor/opus-prelude.js", "vendor/opus-encoder-lib.js"],
+      "matches": ["https://web.whatsapp.com/*"]
+    }
+  ]
+}

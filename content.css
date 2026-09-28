@@ -1,0 +1,9 @@
+#vp-shell { position:fixed; right:18px; bottom:18px; z-index:2147483647; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+#vp-shell * { box-sizing:border-box; }
+.vp-shell__fab { width:58px; height:58px; border:0; border-radius:18px; display:none; align-items:center; justify-content:center; color:#fff; background:linear-gradient(145deg,#24c38e,#087a5d); box-shadow:0 14px 35px rgba(6,72,52,.34); cursor:pointer; transition:transform .18s ease,box-shadow .18s ease; }
+.vp-shell__fab:hover { transform:translateY(-3px) scale(1.02); box-shadow:0 17px 40px rgba(6,72,52,.4); }
+.vp-shell__fab svg { width:29px; fill:currentColor; }
+.vp-shell__panel { width:min(410px,calc(100vw - 26px)); height:min(700px,calc(100vh - 34px)); border:0; border-radius:22px; background:#f7faf8; box-shadow:0 24px 70px rgba(8,42,31,.32); }
+.vp-shell--closed .vp-shell__panel { display:none; }
+.vp-shell--closed .vp-shell__fab { display:flex; }
+@media (max-width:560px) { #vp-shell { right:8px; bottom:8px; } .vp-shell__panel { width:calc(100vw - 16px); height:calc(100vh - 16px); } }
