@@ -1,0 +1,151 @@
+@use 'abstracts/variables' as *;
+@use 'abstracts/mixins' as *;
+@use 'components/panel';
+@use 'components/dashboard';
+@use 'components/workspace';
+@use 'components/schedules';
+@use 'components/automation';
+@use 'components/dashboard-shell';
+@use 'components/license';
+@use 'components/theme';
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  color: $color-text;
+  background: $color-background;
+  font-family: Inter, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: .55;
+}
+
+.icon {
+  display: block;
+  width: 1em;
+  height: 1em;
+}
+
+.popup {
+  width: 280px;
+  padding: 1rem;
+
+  & > p {
+    color: $color-muted;
+    font-size: .85rem;
+  }
+}
+
+.options {
+  padding: 2rem;
+
+  & > p {
+    color: $color-muted;
+  }
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .35rem;
+  min-height: 34px;
+  padding: .4rem .7rem;
+  border: 1px solid $color-border;
+  border-radius: $radius-sm;
+  color: $color-text;
+  background: $white;
+  font-size: .75rem;
+  font-weight: 600;
+  transition: border-color .18s ease, background-color .18s ease, color .18s ease;
+
+  &:hover {
+    border-color: $color-brand-500;
+  }
+
+  &--primary {
+    border-color: $color-brand-500;
+    color: $white;
+    background: $color-brand-500;
+
+    &:hover {
+      border-color: $color-brand-600;
+      background: $color-brand-600;
+    }
+  }
+
+  &--danger {
+    border-color: #fee2e2;
+    color: $color-danger;
+    background: #fff7f7;
+  }
+
+  & > .icon {
+    width: .8rem;
+    height: .8rem;
+  }
+}
+
+.toast {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  z-index: 50;
+  max-width: calc(100% - 2rem);
+  padding: .75rem .85rem;
+  border-radius: $radius-sm;
+  color: $white;
+  background: $color-brand-900;
+  box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .18);
+  font-size: .78rem;
+
+  &--error {
+    background: #b91c1c;
+  }
+
+  & > button {
+    padding: 0;
+    border: 0;
+    color: inherit;
+    background: transparent;
+
+    & > .icon {
+      width: .7rem;
+      height: .7rem;
+    }
+  }
+}
+
+@include max(360px) {
+  body {
+    min-width: 280px;
+  }
+}

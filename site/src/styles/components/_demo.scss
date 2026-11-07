@@ -1,0 +1,280 @@
+@use 'sass:list';
+@use '../abstracts' as *;
+
+// Demonstrações animadas. O estado padrão é o final (visível), usado também
+// quando o sistema pede menos movimento; as animações só rodam com movimento liberado.
+
+// Aparece em $start e some no fim do ciclo.
+@mixin reveal($name, $start) {
+  @keyframes #{$name} {
+    0%,
+    #{$start - 4%} {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+
+    #{$start},
+    92% {
+      opacity: 1;
+      transform: none;
+    }
+
+    100% {
+      opacity: 0;
+    }
+  }
+}
+
+// Visível só entre $from e $to.
+@mixin window($name, $from, $to) {
+  @keyframes #{$name} {
+    0%,
+    #{$from - 2%} {
+      opacity: 0;
+    }
+
+    #{$from},
+    #{$to} {
+      opacity: 1;
+    }
+
+    #{$to + 2%},
+    100% {
+      opacity: 0;
+    }
+  }
+}
+
+@mixin play($name) {
+  @include motion {
+    animation: $name $demo-duration ease infinite;
+  }
+}
+
+// Status "online" → "gravando áudio…" → "online"
+.demo-status {
+  @include swap-layers;
+
+  &__busy {
+    opacity: 0;
+    color: #008069;
+  }
+
+  @include motion {
+    &__idle {
+      animation: demo-status-idle $demo-duration infinite;
+    }
+
+    &__busy {
+      animation: demo-status-busy $demo-duration infinite;
+    }
+  }
+}
+
+@include window(demo-status-busy, 15%, 42%);
+
+@keyframes demo-status-idle {
+  0%,
+  13%,
+  44%,
+  100% {
+    opacity: 1;
+  }
+
+  15%,
+  42% {
+    opacity: 0;
+  }
+}
+
+// Áudio chega depois da gravação e toca.
+.demo-audio {
+  @include play(demo-audio);
+
+  .wa__progress {
+    @include motion {
+      animation: demo-progress $demo-duration linear infinite;
+    }
+  }
+}
+
+@include reveal(demo-audio, 46%);
+
+@keyframes demo-progress {
+  0%,
+  50% {
+    width: 0;
+  }
+
+  88%,
+  100% {
+    width: 100%;
+  }
+}
+
+// Clique no atalho da barra.
+.demo-press {
+  @include motion {
+    animation: demo-press $demo-duration infinite;
+  }
+}
+
+@keyframes demo-press {
+  0%,
+  8%,
+  14%,
+  100% {
+    box-shadow: none;
+    transform: none;
+  }
+
+  10%,
+  12% {
+    box-shadow: 0 0 0 3px rgba($color-green, .35);
+    transform: scale(.95);
+  }
+}
+
+// Instalação na loja.
+.demo-install {
+  @include swap-layers;
+
+  &__idle {
+    opacity: 0;
+  }
+
+  @include motion {
+    animation: demo-install-click $demo-duration infinite;
+
+    &__idle {
+      animation: demo-install-idle $demo-duration infinite;
+    }
+
+    &__done {
+      animation: demo-install-done $demo-duration infinite;
+    }
+  }
+}
+
+@keyframes demo-install-click {
+  0%,
+  26%,
+  34%,
+  100% {
+    transform: none;
+  }
+
+  30% {
+    transform: scale(.94);
+  }
+}
+
+@keyframes demo-install-idle {
+  0%,
+  32%,
+  96%,
+  100% {
+    opacity: 1;
+  }
+
+  34%,
+  94% {
+    opacity: 0;
+  }
+}
+
+@include window(demo-install-done, 34%, 94%);
+
+.demo-toast {
+  @include play(demo-toast);
+}
+
+@include reveal(demo-toast, 44%);
+
+// Funil: cada etapa entra em sequência.
+$funnel-starts: (12%, 38%, 64%);
+
+@each $start in $funnel-starts {
+  $index: list.index($funnel-starts, $start);
+
+  .demo-funnel--#{$index} {
+    @include play(demo-funnel-#{$index});
+  }
+
+  @include reveal(demo-funnel-#{$index}, $start);
+}
+
+// Campanha: contatos passam de "Pendente" para "Enviado".
+$state-starts: (18%, 36%, 54%, 72%);
+
+.demo-state {
+  @include swap-layers;
+
+  &__wait {
+    opacity: 0;
+    color: $color-muted;
+  }
+
+  &__ok {
+    color: $color-green;
+  }
+}
+
+@each $start in $state-starts {
+  $index: list.index($state-starts, $start);
+
+  @include motion {
+    .demo-state--#{$index} {
+      .demo-state__wait {
+        animation: demo-state-wait-#{$index} $demo-duration infinite;
+      }
+
+      .demo-state__ok {
+        animation: demo-state-ok-#{$index} $demo-duration infinite;
+      }
+    }
+  }
+
+  @keyframes demo-state-wait-#{$index} {
+    0%,
+    #{$start - 2%},
+    96%,
+    100% {
+      opacity: 1;
+    }
+
+    #{$start},
+    94% {
+      opacity: 0;
+    }
+  }
+
+  @include window(demo-state-ok-#{$index}, $start, 94%);
+}
+
+.demo-bar {
+  @include motion {
+    animation: demo-bar $demo-duration ease infinite;
+  }
+}
+
+@keyframes demo-bar {
+  0%,
+  10% {
+    width: 0;
+  }
+
+  @each $start in $state-starts {
+    #{$start} {
+      width: list.index($state-starts, $start) * 25%;
+    }
+  }
+
+  94% {
+    width: 100%;
+  }
+
+  100% {
+    width: 0;
+  }
+}

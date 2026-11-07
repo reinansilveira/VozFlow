@@ -1,0 +1,44 @@
+@use '../abstracts' as *;
+
+// Botão flutuante para tirar dúvidas no WhatsApp; no celular fica acima do CTA fixo.
+.whatsapp-float {
+  position: fixed;
+  right: $space-4;
+  bottom: 5.5rem;
+  z-index: 44;
+  display: inline-flex;
+  align-items: center;
+  gap: $space-2;
+  min-width: 3.5rem;
+  min-height: 3.5rem;
+  padding: $space-3;
+  font-weight: $font-weight-bold;
+  color: $color-cta-text;
+  background: $color-cta;
+  border-radius: $radius-pill;
+  box-shadow: 0 10px 30px rgba($color-navy, .25);
+  transition: transform $transition;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+  .icon {
+    width: 1.75rem;
+    height: 1.75rem;
+    margin-inline: auto;
+  }
+
+  &__label {
+    display: none;
+  }
+
+  @include min(md) {
+    bottom: $space-5;
+    padding-inline: $space-4 $space-5;
+
+    &__label {
+      display: inline;
+    }
+  }
+}

@@ -1,0 +1,49 @@
+@use '../abstracts' as *;
+
+.auth {
+  display: grid;
+  min-height: 100vh;
+  padding: $space-4;
+  place-items: center;
+}
+
+.auth-card {
+  @include card;
+
+  display: grid;
+  gap: $space-4;
+  width: min(100%, 24rem);
+  padding: $space-6 $space-5;
+  box-shadow: $shadow-md;
+
+  h1 {
+    color: $color-navy;
+    font-size: 1.25rem;
+  }
+
+  &__form {
+    display: grid;
+    gap: $space-3;
+  }
+
+  &__text {
+    color: $color-muted;
+    font-size: .875rem;
+  }
+
+  &__qr {
+    justify-self: center;
+    border: 1px solid $color-border;
+    border-radius: $radius-sm;
+  }
+
+  &__secret {
+    color: $color-muted;
+    font-size: .8125rem;
+    word-break: break-all;
+  }
+
+  .link-button {
+    justify-self: start;
+  }
+}

@@ -1,0 +1,80 @@
+@use '../abstracts' as *;
+
+.shell {
+  min-height: 100vh;
+
+  &__header {
+    display: flex;
+    gap: $space-4;
+    align-items: center;
+    justify-content: space-between;
+    padding: $space-3 $space-4;
+    color: #fff;
+    background: $color-navy;
+  }
+
+  &__brand {
+    display: flex;
+    gap: $space-2;
+    align-items: center;
+    font-weight: 700;
+
+    small {
+      color: rgba(#fff, .7);
+      font-weight: 500;
+    }
+  }
+
+  &__account {
+    display: flex;
+    gap: $space-2;
+    align-items: center;
+    min-width: 0;
+    font-size: .8125rem;
+
+    span {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .button--ghost {
+      color: #fff;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    gap: $space-1;
+    padding: 0 $space-4;
+    overflow-x: auto;
+    border-bottom: 1px solid $color-border;
+    background: $color-surface;
+  }
+
+  &__tab {
+    padding: $space-3 $space-3;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    color: $color-muted;
+    background: none;
+    font-size: .875rem;
+    font-weight: 600;
+    white-space: nowrap;
+    cursor: pointer;
+
+    &--active {
+      border-color: $color-green;
+      color: $color-navy;
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: $space-5;
+    max-width: $breakpoint-lg;
+    margin: 0 auto;
+    padding: $space-5 $space-4 $space-6;
+  }
+}

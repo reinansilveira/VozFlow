@@ -1,0 +1,53 @@
+@use '../abstracts' as *;
+
+// Selo de garantia.
+.guarantee {
+  display: grid;
+  gap: $space-5;
+  align-items: center;
+  padding: $space-6;
+  background: $color-green-soft;
+  border-radius: $radius-lg;
+
+  @include min(md) {
+    grid-template-columns: auto 1fr;
+    gap: $space-6;
+  }
+
+  &__seal {
+    display: grid;
+    width: 7rem;
+    height: 7rem;
+    margin-inline: auto;
+    place-content: center;
+    color: $color-white;
+    text-align: center;
+    background: $color-green;
+    border: 4px dashed rgba($color-white, .6);
+    border-radius: 50%;
+    box-shadow: 0 0 0 6px $color-green;
+
+    strong {
+      font-size: 2.5rem;
+      font-weight: $font-weight-heavy;
+      line-height: 1;
+    }
+
+    span {
+      font-size: .875rem;
+      font-weight: $font-weight-bold;
+      text-transform: uppercase;
+    }
+  }
+
+  &__title {
+    @include fluid-type(1.5rem, '2vw + 1rem', 2rem);
+
+    color: $color-navy;
+  }
+
+  &__text {
+    margin-top: $space-2;
+    font-size: 1.125rem;
+  }
+}

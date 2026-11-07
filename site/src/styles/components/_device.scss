@@ -1,0 +1,392 @@
+@use '../abstracts' as *;
+
+// Cores do WhatsApp Web (tema claro), usadas só nas demonstrações.
+$wa-bg: #efeae2;
+$wa-panel: #f0f2f5;
+$wa-out: #d9fdd3;
+$wa-text: #111b21;
+$wa-muted: #667781;
+$wa-green: #008069;
+
+.device {
+  width: 100%;
+  overflow: hidden;
+  background: $color-white;
+  border: 1px solid $color-border;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-lg;
+
+  &--compact {
+    max-width: 26rem;
+  }
+
+  &__bar {
+    display: flex;
+    align-items: center;
+    gap: .375rem;
+    padding: $space-3 $space-4;
+    background: $color-surface-strong;
+
+    i {
+      width: .625rem;
+      height: .625rem;
+      background: #c5cfcc;
+      border-radius: 50%;
+    }
+  }
+
+  &__url {
+    flex: 1;
+    min-width: 0;
+    margin-left: $space-3;
+    padding: .125rem $space-3;
+    overflow: hidden;
+    font-size: .75rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: $color-muted;
+    background: $color-white;
+    border-radius: $radius-pill;
+  }
+}
+
+.phone {
+  width: 100%;
+  max-width: 18rem;
+  padding: .625rem;
+  background: $color-navy;
+  border-radius: 2rem;
+  box-shadow: $shadow-lg;
+
+  .wa {
+    overflow: hidden;
+    border-radius: 1.5rem;
+  }
+
+  .wa__body {
+    min-height: 15rem;
+  }
+}
+
+.wa {
+  font-size: .875rem;
+  color: $wa-text;
+  background: $wa-bg;
+
+  &--desktop {
+    display: grid;
+
+    @include min(sm) {
+      grid-template-columns: 11rem 1fr;
+    }
+  }
+
+  &__list {
+    display: none;
+    background: $color-white;
+    border-right: 1px solid #e9edef;
+
+    @include min(sm) {
+      display: block;
+    }
+  }
+
+  &__contact {
+    display: flex;
+    align-items: center;
+    gap: $space-2;
+    padding: $space-3;
+    font-size: .8125rem;
+    border-bottom: 1px solid #f0f2f5;
+
+    &--active {
+      background: $wa-panel;
+    }
+  }
+
+  &__avatar {
+    display: grid;
+    flex-shrink: 0;
+    place-items: center;
+    width: 2rem;
+    height: 2rem;
+    font-size: .6875rem;
+    font-weight: $font-weight-bold;
+    color: $color-white;
+    background: $color-green;
+    border-radius: 50%;
+
+    &--2 {
+      background: accent('purple');
+    }
+
+    &--3 {
+      background: $color-amber;
+    }
+
+    &--4 {
+      background: accent('cyan');
+    }
+  }
+
+  &__chat {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    padding: $space-3 $space-4;
+    line-height: 1.3;
+    background: $wa-panel;
+  }
+
+  &__name {
+    font-weight: $font-weight-bold;
+  }
+
+  &__status {
+    font-size: .75rem;
+    color: $wa-muted;
+  }
+
+  &__body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: $space-2;
+    min-height: 11rem;
+    padding: $space-4;
+  }
+
+  &__bubble {
+    max-width: 85%;
+    padding: .375rem $space-3;
+    line-height: 1.4;
+    border-radius: $radius-sm;
+    box-shadow: 0 1px .5px rgba(11, 20, 26, .13);
+
+    &--in {
+      align-self: flex-start;
+      background: $color-white;
+    }
+
+    &--out {
+      align-self: flex-end;
+      background: $wa-out;
+    }
+
+    &--audio {
+      display: flex;
+      align-items: center;
+      gap: $space-2;
+      width: 80%;
+    }
+
+    &--image {
+      display: flex;
+      flex-direction: column;
+      gap: .375rem;
+      width: 70%;
+    }
+  }
+
+  &__play {
+    flex-shrink: 0;
+    width: 0;
+    height: 0;
+    border-block: .4rem solid transparent;
+    border-left: .65rem solid $wa-muted;
+  }
+
+  &__track {
+    position: relative;
+    flex: 1;
+    height: .25rem;
+    background: #b7c4bd;
+    border-radius: $radius-pill;
+  }
+
+  &__progress {
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 35%;
+    background: $wa-green;
+    border-radius: inherit;
+
+    &--full {
+      width: 100%;
+    }
+  }
+
+  &__time {
+    font-size: .6875rem;
+    color: $wa-muted;
+  }
+
+  &__image {
+    display: grid;
+    place-items: center;
+    height: 5rem;
+    color: $wa-green;
+    background: #c6e9d6;
+    border-radius: .375rem;
+  }
+}
+
+.quickbar {
+  display: flex;
+  gap: $space-2;
+  padding: $space-3 $space-4;
+  overflow: hidden;
+  background: $wa-panel;
+
+  &__item {
+    display: inline-flex;
+    flex: 1 1 0;
+    align-items: center;
+    gap: .375rem;
+    min-width: 0;
+    padding: .375rem $space-2;
+    overflow: hidden;
+    font-size: .75rem;
+    font-weight: $font-weight-bold;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: $color-white;
+    border-radius: $radius-sm;
+
+    &--flow {
+      background: accent('purple');
+    }
+
+    &--audio {
+      background: $color-green;
+    }
+
+    &--text {
+      background: accent('cyan');
+    }
+  }
+}
+
+.store {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: $space-4;
+  align-items: center;
+  padding: $space-6 $space-5 $space-8;
+
+  &__logo {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.3;
+  }
+
+  &__name {
+    font-weight: $font-weight-heavy;
+    color: $color-navy;
+  }
+
+  &__meta {
+    font-size: .8125rem;
+    color: $color-muted;
+  }
+
+  &__button {
+    grid-column: 1 / -1;
+    justify-self: start;
+    padding: $space-2 $space-4;
+    font-size: .875rem;
+    font-weight: $font-weight-bold;
+    color: $color-white;
+    background: #1a73e8;
+    border-radius: $radius-pill;
+  }
+
+  &__toast {
+    position: absolute;
+    right: $space-4;
+    bottom: $space-4;
+    left: $space-4;
+    display: flex;
+    align-items: center;
+    gap: $space-2;
+    padding: $space-2 $space-3;
+    font-size: .8125rem;
+    font-weight: $font-weight-bold;
+    color: $color-white;
+    background: $color-navy;
+    border-radius: $radius-sm;
+  }
+}
+
+.panel {
+  width: 100%;
+  max-width: 24rem;
+  padding: $space-5;
+  font-size: .875rem;
+  background: $color-white;
+  border: 1px solid $color-border;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-lg;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: $space-3;
+  }
+
+  &__title {
+    font-weight: $font-weight-bold;
+    color: $color-navy;
+  }
+
+  &__badge {
+    flex-shrink: 0;
+    padding: .125rem $space-2;
+    font-size: .75rem;
+    font-weight: $font-weight-bold;
+    color: $color-green-dark;
+    background: $color-green-soft;
+    border-radius: $radius-pill;
+  }
+
+  &__progress {
+    height: .375rem;
+    margin-block: $space-4;
+    overflow: hidden;
+    background: $color-surface-strong;
+    border-radius: $radius-pill;
+  }
+
+  &__bar {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: $color-green;
+    border-radius: inherit;
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: $space-2;
+    border-top: 1px solid $color-border;
+  }
+
+  &__state {
+    font-size: .75rem;
+    font-weight: $font-weight-bold;
+  }
+}

@@ -1,0 +1,81 @@
+@use '../abstracts' as *;
+
+// Rodapé: navegação do site em destaque; dados legais e contato discretos na faixa final.
+.footer {
+  padding-block: $space-7 $space-5;
+  color: #b9c7cf;
+  background: $color-navy;
+
+  &__inner {
+    display: grid;
+    gap: $space-6;
+
+    @include min(md) {
+      grid-template-columns: 1fr auto;
+      align-items: start;
+    }
+  }
+
+  &__tagline {
+    max-width: 20rem;
+    margin-top: $space-3;
+  }
+
+  &__cta {
+    margin-top: $space-4;
+  }
+
+  &__links {
+    display: grid;
+    gap: $space-3;
+    font-size: 1rem;
+    font-weight: $font-weight-medium;
+
+    @include min(md) {
+      grid-auto-flow: column;
+      gap: $space-5;
+    }
+  }
+
+  &__link {
+    color: $color-white;
+    transition: color $transition;
+
+    &:hover {
+      color: $color-green-soft;
+    }
+  }
+
+  &__bottom {
+    display: grid;
+    gap: $space-2;
+    margin-top: $space-7;
+    padding-top: $space-4;
+    font-size: .75rem;
+    color: #7f939f;
+    border-top: 1px solid $color-navy-soft;
+
+    @include min(md) {
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: $space-5;
+    }
+  }
+
+  &__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $space-1 $space-4;
+  }
+
+  &__meta-link {
+    // Texto pequeno, mas com área de toque confortável no celular.
+    display: inline-block;
+    padding-block: $space-1;
+    transition: color $transition;
+
+    &:hover {
+      color: $color-white;
+    }
+  }
+}

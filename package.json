@@ -1,0 +1,38 @@
+{
+  "name": "vozflow",
+  "private": true,
+  "version": "1.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "build:sass": "sass --no-source-map src/shared/styles:dist/styles",
+    "site:dev": "vite --config vite.site.config.ts",
+    "site:build": "tsc --noEmit && vite build --config vite.site.config.ts",
+    "site:preview": "vite preview --config vite.site.config.ts",
+    "admin:dev": "vite --config vite.admin.config.ts",
+    "admin:build": "tsc --noEmit && vite build --config vite.admin.config.ts",
+    "admin:preview": "vite preview --config vite.admin.config.ts"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.109.0",
+    "@vitejs/plugin-react": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  },
+  "devDependencies": {
+    "@crxjs/vite-plugin": "latest",
+    "@types/chrome": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "sass": "latest",
+    "typescript": "latest",
+    "vite": "latest",
+    "vitest": "^4.1.11"
+  },
+  "overrides": {
+    "source-map-js": "1.2.2"
+  }
+}

@@ -1,0 +1,6 @@
+@use 'sass:map';
+@use 'tokens' as *;
+
+@function accent($name) {
+  @return map.get($accents, $name);
+}

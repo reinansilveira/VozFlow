@@ -1,0 +1,70 @@
+@use '../abstracts' as *;
+
+// Tabela "sem VozFlow × com VozFlow".
+.compare {
+  overflow-x: auto;
+  border: 1px solid $color-border;
+  border-radius: $radius-lg;
+
+  &__table {
+    width: 100%;
+    min-width: 34rem;
+    border-collapse: collapse;
+
+    th,
+    td {
+      padding: $space-4;
+      text-align: left;
+      vertical-align: middle;
+      border-bottom: 1px solid $color-border;
+    }
+
+    thead th {
+      font-size: .875rem;
+      color: $color-muted;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+
+    tbody th {
+      font-weight: $font-weight-bold;
+      color: $color-navy;
+    }
+
+    tr:last-child > * {
+      border-bottom: 0;
+    }
+
+    td {
+      color: $color-muted;
+    }
+
+    .icon {
+      display: inline-block;
+      margin-right: $space-2;
+      vertical-align: -.2em;
+    }
+  }
+
+  &__us {
+    font-weight: $font-weight-bold;
+    color: $color-green-dark;
+    background: rgba($color-green-soft, .6);
+
+    thead & {
+      color: $color-green-dark;
+    }
+
+    td#{&} {
+      color: $color-navy;
+    }
+  }
+
+  &__no {
+    color: #b42318;
+  }
+
+  &__yes {
+    color: $color-green;
+  }
+}

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&display=block" />
+<style>
+  * { box-sizing: border-box; margin: 0; }
+  body { width: 1200px; height: 630px; overflow: hidden; font-family: 'Plus Jakarta Sans', sans-serif;
+    background: radial-gradient(760px 420px at 88% 18%, rgba(34, 211, 122, .2), transparent 62%), #0a1c26; color: #c9d6dd; }
+  .wrap { display: grid; grid-template-columns: 560px 1fr; gap: 40px; align-items: center; height: 100%; padding: 0 64px; }
+  .brand { display: flex; align-items: center; gap: 14px; font-size: 30px; font-weight: 800; color: #fff; margin-bottom: 34px; }
+  .brand img { width: 52px; height: 52px; }
+  h1 { font-size: 56px; line-height: 1.08; font-weight: 800; color: #fff; letter-spacing: -.5px; }
+  h1 span { color: #22d37a; background: linear-gradient(transparent 72%, rgba(255, 200, 61, .38) 72%); }
+  p { margin-top: 22px; font-size: 22px; font-weight: 500; }
+  .pill { display: inline-block; margin-top: 30px; padding: 14px 26px; border-radius: 999px; background: #22d37a; color: #052319; font-size: 22px; font-weight: 800; }
+  .shot { position: relative; border-radius: 18px; overflow: hidden; border: 1px solid rgba(255,255,255,.14); box-shadow: 0 30px 80px rgba(0,0,0,.5); }
+  .shot img { display: block; width: 100%; }
+  .tag { position: absolute; padding: 10px 16px; border-radius: 12px; background: #fff; color: #0a1c26; font-size: 18px; font-weight: 700; box-shadow: 0 10px 24px rgba(0,0,0,.25); }
+  .tag--a { top: 18px; right: 18px; }
+  .tag--b { bottom: 18px; left: 18px; }
+  .tag::before { content: '● '; color: #22d37a; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div>
+      <div class="brand"><img src="../../site/public/brand/vozflow-symbol.svg" alt="" />VozFlow</div>
+      <h1>Seu WhatsApp vendendo no automático.<br /><span>Com a sua voz.</span></h1>
+      <p>Áudios como gravados na hora, funis e agendamentos no WhatsApp Web.</p>
+      <div class="pill">3 dias grátis · sem cartão</div>
+    </div>
+    <div class="shot">
+      <img src="../../site/public/media/vozflow-demo-poster.jpg" alt="" />
+      <span class="tag tag--a">Áudio enviado em 1 clique</span>
+      <span class="tag tag--b">Sem “encaminhado”</span>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.DS_Store
+*.log
+supabase/functions/.env
+.env
+
+# Vídeos de rascunho dos criativos (o vídeo do site fica em site/public/media/)
+video-criativo/

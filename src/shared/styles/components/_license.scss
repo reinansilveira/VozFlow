@@ -1,0 +1,205 @@
+@use '../abstracts/variables' as *;
+
+.license-card {
+  display: grid;
+  gap: 10px;
+  margin: 12px 16px 0;
+  padding: 14px;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  color: $color-text;
+  background: $color-surface;
+  box-shadow: $shadow-sm;
+
+  &__header {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+
+    h2,
+    p {
+      margin: 0;
+    }
+
+    h2 {
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    p {
+      margin-top: 2px;
+      color: $color-muted;
+      font-size: 12px;
+    }
+  }
+
+  &__icon {
+    width: 18px;
+    height: 18px;
+    flex: 0 0 auto;
+    color: $color-blue-600;
+  }
+
+  &__trial {
+    display: grid;
+    gap: 6px;
+
+    small {
+      color: $color-muted;
+      font-size: 11px;
+
+      a {
+        color: inherit;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__form {
+    display: grid;
+    gap: 4px;
+    width: 100%;
+
+    label {
+      color: $color-muted;
+      font-size: 11px;
+      font-weight: 600;
+    }
+  }
+
+  &__field {
+    display: flex;
+    gap: 6px;
+
+    input {
+      flex: 1 1 auto;
+      min-width: 0;
+      padding: 8px 9px;
+      border: 1px solid $color-border;
+      border-radius: $radius-sm;
+      color: inherit;
+      background: $color-surface-light;
+      font-family: ui-monospace, monospace;
+      font-size: 12px;
+      letter-spacing: .04em;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+
+    &:empty {
+      display: none;
+    }
+
+    & > a {
+      text-decoration: none;
+    }
+  }
+
+  &__note,
+  &__feedback {
+    margin: 0;
+    font-size: 11px;
+  }
+
+  &__note {
+    color: $color-muted;
+  }
+
+  &__feedback--error {
+    color: $color-danger;
+  }
+
+  &__summary {
+    display: grid;
+    flex: 1 1 auto;
+    margin: 0;
+
+    strong {
+      font-size: 12px;
+    }
+
+    span {
+      color: $color-muted;
+      font-size: 11px;
+    }
+  }
+
+  &__link {
+    padding: 0;
+    border: 0;
+    color: $color-brand-700;
+    background: transparent;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  &--compact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 12px;
+    align-items: center;
+    padding: 10px 14px;
+
+    .license-card__icon {
+      color: $color-brand-600;
+    }
+  }
+
+  &--blocked {
+    border-color: #fecaca;
+    background: #fff7f7;
+
+    .license-card__icon {
+      color: $color-danger;
+    }
+  }
+
+  &--warning {
+    border-color: #fde68a;
+    background: $color-warning-50;
+
+    .license-card__icon {
+      color: $color-warning-500;
+    }
+  }
+}
+
+.voz-panel--dark .license-card {
+  border-color: $color-dark-border;
+  color: $color-dark-text;
+  background: $color-dark-surface;
+  box-shadow: $shadow-dark-card;
+
+  .license-card__header p,
+  .license-card__trial small,
+  .license-card__form label,
+  .license-card__note,
+  .license-card__summary span {
+    color: $color-dark-muted;
+  }
+
+  .license-card__field input {
+    border-color: $color-dark-border;
+    background: $color-dark-surface-light;
+  }
+
+  .license-card__link {
+    color: $color-brand-500;
+  }
+
+  &--blocked {
+    border-color: #7f1d1d;
+    background: #3a1d2b;
+  }
+
+  &--warning {
+    border-color: #92400e;
+    background: #3a2a1d;
+  }
+}

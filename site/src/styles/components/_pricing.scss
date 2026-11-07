@@ -1,0 +1,201 @@
+@use '../abstracts' as *;
+
+// Alternância de período e cartões de preço.
+.period {
+  display: flex;
+  width: fit-content;
+  margin: 0 auto $space-6;
+  padding: $space-1;
+  background: $color-white;
+  border: 1px solid $color-border;
+  border-radius: $radius-pill;
+
+  &__option {
+    display: inline-flex;
+    align-items: center;
+    gap: $space-2;
+    min-height: 2.5rem;
+    padding: $space-2 $space-5;
+    font-weight: $font-weight-bold;
+    color: $color-muted;
+    background: none;
+    border: 0;
+    border-radius: $radius-pill;
+    cursor: pointer;
+
+    &[aria-pressed='true'] {
+      color: $color-white;
+      background: $color-navy;
+    }
+  }
+
+  &__save {
+    padding: .125rem $space-2;
+    font-size: .75rem;
+    color: $color-green-dark;
+    background: $color-green-soft;
+    border-radius: $radius-pill;
+  }
+}
+
+.pricing {
+  display: grid;
+  gap: $space-5;
+  align-items: start;
+
+  @include min(lg) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  &__card {
+    @include card;
+
+    position: relative;
+    display: grid;
+    gap: $space-3;
+    padding: $space-6 $space-5;
+
+    &--featured {
+      // No celular, o plano recomendado aparece primeiro.
+      order: -1;
+      margin-top: $space-3;
+      border: 2px solid $color-cta;
+      box-shadow: $shadow-lg;
+
+      @include min(lg) {
+        order: 0;
+        margin-top: 0;
+      }
+
+      @include min(lg) {
+        transform: scale(1.04);
+      }
+    }
+  }
+
+  &__badge {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    padding: $space-1 $space-4;
+    font-size: .8125rem;
+    font-weight: $font-weight-bold;
+    color: $color-navy;
+    white-space: nowrap;
+    background: $color-highlight;
+    border-radius: $radius-pill;
+    transform: translate(-50%, -50%);
+  }
+
+  &__name {
+    font-size: 1.375rem;
+  }
+
+  &__for {
+    color: $color-muted;
+  }
+
+  &__price {
+    display: flex;
+    align-items: baseline;
+    gap: $space-1;
+    font-size: 3rem;
+    font-weight: $font-weight-heavy;
+    line-height: 1;
+    color: $color-navy;
+  }
+
+  &__currency,
+  &__suffix {
+    font-size: 1rem;
+    font-weight: $font-weight-bold;
+    color: $color-muted;
+  }
+
+  &__billing {
+    min-height: 1.5em;
+    font-size: .875rem;
+    color: $color-muted;
+  }
+
+  &__list {
+    display: grid;
+    gap: $space-2;
+    margin-top: $space-3;
+    padding-top: $space-4;
+    border-top: 1px solid $color-border;
+
+    li {
+      display: flex;
+      gap: $space-2;
+      align-items: flex-start;
+    }
+
+    .icon {
+      margin-top: .15rem;
+      color: $color-green;
+    }
+  }
+
+  &__assurance {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: $space-3 $space-6;
+    margin-top: $space-7;
+    font-weight: $font-weight-medium;
+    color: $color-navy;
+
+    li {
+      display: inline-flex;
+      align-items: center;
+      gap: $space-2;
+    }
+
+    .icon {
+      color: $color-green;
+    }
+  }
+}
+
+// Preço mensal riscado no anual.
+.pricing__old {
+  align-self: center;
+  margin-right: $space-2;
+  font-size: 1rem;
+  font-weight: $font-weight-medium;
+  color: $color-muted;
+}
+
+// Requisitos e contato para equipes maiores, abaixo dos planos.
+.requirements {
+  display: flex;
+  gap: $space-3;
+  align-items: flex-start;
+  max-width: 44rem;
+  margin: $space-6 auto 0;
+  padding: $space-4;
+  font-size: .9375rem;
+  background: $color-white;
+  border: 1px solid $color-border;
+  border-left: 4px solid $color-highlight;
+  border-radius: $radius-md;
+
+  .icon {
+    margin-top: .1rem;
+    color: $color-navy;
+  }
+}
+
+.pricing__more {
+  margin-top: $space-4;
+  text-align: center;
+  color: $color-muted;
+
+  a {
+    font-weight: $font-weight-bold;
+    color: $color-green-dark;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+}

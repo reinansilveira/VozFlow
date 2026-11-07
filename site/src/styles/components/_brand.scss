@@ -1,0 +1,24 @@
+@use '../abstracts' as *;
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-2;
+  color: $color-navy;
+  border-radius: $radius-sm;
+
+  &--light {
+    color: $color-white;
+  }
+
+  &__symbol {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+
+  &__name {
+    font-size: 1.375rem;
+    font-weight: $font-weight-heavy;
+    letter-spacing: -.02em;
+  }
+}

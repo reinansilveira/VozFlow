@@ -1,0 +1,217 @@
+@use '../abstracts' as *;
+
+.hero {
+  padding-block: $space-7 $space-8;
+  color: #c9d6dd;
+  background:
+    radial-gradient(60rem 30rem at 85% 20%, rgba($color-cta, .14), transparent 60%),
+    $color-navy;
+
+  &__inner {
+    display: grid;
+    gap: $space-5;
+    align-items: center;
+
+    @include min(lg) {
+      grid-template-columns: .9fr 1.1fr;
+      gap: $space-7;
+    }
+  }
+
+  // No celular, o vídeo sobe para logo depois do título: o conteúdo vira itens do grid e ganha ordem.
+  &__content {
+    display: contents;
+
+    @include min(lg) {
+      display: block;
+    }
+  }
+
+  &__eyebrow,
+  &__title {
+    order: 1;
+  }
+
+  &__visual {
+    order: 2;
+  }
+
+  &__lead,
+  &__actions,
+  &__checks {
+    order: 3;
+  }
+
+  @include min(lg) {
+    &__eyebrow,
+    &__title,
+    &__visual,
+    &__lead,
+    &__actions,
+    &__checks {
+      order: 0;
+    }
+  }
+
+  &__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    justify-self: start;
+    gap: $space-2;
+    padding: $space-1 $space-3;
+
+    @include min(lg) {
+      margin-bottom: $space-4;
+    }
+
+    font-size: .875rem;
+    font-weight: $font-weight-bold;
+    color: $color-white;
+    background: rgba($color-white, .08);
+    border: 1px solid rgba($color-white, .16);
+    border-radius: $radius-pill;
+  }
+
+  &__pulse {
+    width: .5rem;
+    height: .5rem;
+    background: $color-cta;
+    border-radius: 50%;
+
+    @include motion {
+      animation: hero-pulse 1.8s ease-out infinite;
+    }
+  }
+
+  &__title {
+    @include fluid-type(2.25rem, '4.5vw + .75rem', 3.5rem);
+
+    color: $color-white;
+  }
+
+  // Marca-texto amarelo sob a promessa principal.
+  &__highlight {
+    color: $color-cta;
+    background: linear-gradient(transparent 70%, rgba($color-highlight, .35) 70%);
+  }
+
+  &__checks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $space-2 $space-5;
+
+    @include min(lg) {
+      margin-top: $space-5;
+    }
+
+    font-size: .9375rem;
+    color: #c9d6dd;
+
+    li {
+      display: inline-flex;
+      align-items: center;
+      gap: $space-1;
+    }
+
+    .icon {
+      color: $color-cta;
+    }
+  }
+
+  &__float {
+    position: absolute;
+    z-index: 2;
+    display: none;
+    align-items: center;
+    gap: $space-2;
+    padding: $space-2 $space-3;
+    font-size: .875rem;
+    font-weight: $font-weight-bold;
+    color: $color-navy;
+    background: $color-white;
+    border-radius: $radius-md;
+    box-shadow: $shadow-md;
+
+    .icon {
+      color: $color-green;
+    }
+
+    @include min(lg) {
+      display: inline-flex;
+    }
+
+    &--top {
+      top: -1rem;
+      right: 1.5rem;
+    }
+
+    &--bottom {
+      bottom: -1rem;
+      left: 1.5rem;
+    }
+
+    @include motion {
+      animation: hero-float 5s ease-in-out infinite;
+
+      &--bottom {
+        animation-delay: -2.5s;
+      }
+    }
+  }
+
+  &__lead {
+    max-width: 32rem;
+    font-size: 1.1875rem;
+
+    @include min(lg) {
+      margin-top: $space-5;
+    }
+
+    color: #c9d6dd;
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $space-3;
+
+    @include min(lg) {
+      margin-top: $space-6;
+    }
+
+
+    .button {
+      flex: 1 1 100%;
+
+      @include min(sm) {
+        flex: 0 0 auto;
+      }
+    }
+  }
+
+  &__visual {
+    position: relative;
+    min-width: 0;
+  }
+}
+
+@keyframes hero-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba($color-cta, .6);
+  }
+
+  100% {
+    box-shadow: 0 0 0 .5rem rgba($color-cta, 0);
+  }
+}
+
+@keyframes hero-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-.5rem);
+  }
+}

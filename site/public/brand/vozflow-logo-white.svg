@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 236 64" role="img" aria-labelledby="t">
+  <title id="t">VozFlow</title>
+  <rect width="64" height="64" rx="14" fill="#12805c"/>
+  <path fill="#fff" d="M32 11c12.7 0 23 8.9 23 20s-10.3 20-23 20c-2.9 0-5.7-.5-8.3-1.3L13 53l3.2-9.4C12.3 40.1 9 35.8 9 31c0-11.1 10.3-20 23-20Z"/>
+  <g fill="#0d2433">
+    <rect x="19.2" y="27.5" width="3.6" height="7" rx="1.8"/>
+    <rect x="25.2" y="23.5" width="3.6" height="15" rx="1.8"/>
+    <rect x="31.2" y="19.5" width="3.6" height="23" rx="1.8"/>
+    <rect x="37.2" y="24.5" width="3.6" height="13" rx="1.8"/>
+    <rect x="43.2" y="28.5" width="3.6" height="5" rx="1.8"/>
+  </g>
+  <text x="76" y="44" font-family="'Plus Jakarta Sans', 'Segoe UI', Arial, sans-serif" font-size="34" font-weight="800" letter-spacing="-.8" fill="#ffffff">VozFlow</text>
+</svg>

@@ -1,0 +1,157 @@
+@use '../abstracts' as *;
+
+// Selos de confiança abaixo das provas.
+.seals {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: $space-2 $space-5;
+  margin-top: $space-5;
+  font-size: .875rem;
+  font-weight: $font-weight-medium;
+  color: $color-muted;
+
+  &__item {
+    display: inline-flex;
+    align-items: center;
+    gap: $space-2;
+
+    .icon {
+      color: $color-green;
+    }
+  }
+}
+
+// Faixa da oferta de lançamento acima dos planos.
+.founder {
+  max-width: 44rem;
+  margin: 0 auto $space-6;
+  padding: $space-3 $space-4;
+  text-align: center;
+  background: rgba($color-highlight, .2);
+  border: 1px solid rgba($color-highlight, .7);
+  border-radius: $radius-md;
+
+  &__tag {
+    display: inline-block;
+    margin-right: $space-2;
+    padding: .125rem $space-2;
+    font-size: .75rem;
+    font-weight: $font-weight-heavy;
+    color: $color-navy;
+    text-transform: uppercase;
+    background: $color-highlight;
+    border-radius: $radius-pill;
+  }
+}
+
+// Prova social real (fotos, frase e números de social-proof.ts).
+.social {
+  padding-block: $space-7;
+
+  &__crowd {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: $space-3;
+    align-items: center;
+    margin-bottom: $space-6;
+  }
+
+  &__avatars {
+    display: flex;
+  }
+
+  &__avatar {
+    display: grid;
+    width: 2.75rem;
+    height: 2.75rem;
+    margin-left: -.75rem;
+    overflow: hidden;
+    place-items: center;
+    font-size: .8125rem;
+    font-weight: $font-weight-heavy;
+    color: $color-white;
+    background: $color-navy-soft;
+    border: 3px solid $color-white;
+    border-radius: 50%;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:nth-child(2) {
+      background: $color-green;
+    }
+
+    &:nth-child(3) {
+      background: #6a4fb3;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &:nth-child(4) {
+      background: #b45309;
+    }
+
+    .icon {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+  }
+
+  &__headline {
+    max-width: 22rem;
+    font-size: 1rem;
+    color: $color-muted;
+    text-align: left;
+  }
+
+  // Sem fotos, a frase fica centralizada.
+  &__avatars:empty {
+    display: none;
+
+    + .social__headline {
+      max-width: 40rem;
+      font-size: 1.125rem;
+      text-align: center;
+    }
+  }
+
+  &__stats {
+    display: grid;
+    gap: $space-5;
+    text-align: center;
+
+    @include min(md) {
+      grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    }
+  }
+
+  &__stat {
+    display: grid;
+    gap: $space-1;
+  }
+
+  &__value {
+    @include fluid-type(2.25rem, '3vw + 1rem', 3rem);
+
+    font-weight: $font-weight-heavy;
+    color: $color-navy;
+  }
+
+  &__label {
+    color: $color-muted;
+  }
+
+}
+
+.social__unit {
+  margin-left: .15em;
+  font-size: .6em;
+  color: $color-green;
+}

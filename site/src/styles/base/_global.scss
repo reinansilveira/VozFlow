@@ -1,0 +1,97 @@
+@use '../abstracts' as *;
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(#{$header-height} + #{$space-4});
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: $font-family;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: $color-text;
+  background: $color-bg;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: $font-weight-heavy;
+  line-height: 1.12;
+  letter-spacing: -.02em;
+  color: $color-navy;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:focus-visible {
+  @include focus-ring;
+}
+
+.container {
+  width: 100%;
+  max-width: $container-width;
+  margin-inline: auto;
+  padding-inline: $space-4;
+
+  @include min(md) {
+    padding-inline: $space-6;
+  }
+
+  &--narrow {
+    max-width: $container-narrow;
+  }
+}
+
+.visually-hidden {
+  @include visually-hidden;
+}
+
+.sprite {
+  display: none;
+}
+
+.icon {
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+  &--small {
+    width: 1.125rem;
+    height: 1.125rem;
+  }
+}
+
+.skip-link {
+  position: absolute;
+  top: $space-2;
+  left: $space-2;
+  z-index: 100;
+  padding: $space-2 $space-4;
+  font-weight: $font-weight-bold;
+  color: $color-white;
+  background: $color-navy;
+  border-radius: $radius-sm;
+  transform: translateY(-200%);
+  transition: transform $transition;
+
+  &:focus {
+    transform: none;
+  }
+}

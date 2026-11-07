@@ -1,0 +1,238 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.voz-panel--dashboard {
+  display: grid;
+  width: 100%;
+  max-width: none;
+  height: 100vh;
+  min-height: 680px;
+  margin: 0;
+  grid-template-columns: 248px minmax(0, 1fr);
+  grid-template-rows: 72px minmax(0, 1fr);
+  box-shadow: none;
+
+  .panel-header {
+    min-height: 72px;
+    padding: 0 24px;
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+  .panel-header__logo {
+    width: 40px;
+    height: 40px;
+    border-radius: $radius-sm;
+  }
+
+  .panel-header__brand > h1 {
+    font-size: 22px;
+  }
+
+  .panel-header__theme-toggle {
+    min-height: 36px;
+    padding: 7px 12px;
+    font-size: 12px;
+  }
+
+  .panel-nav {
+    min-height: 0;
+    padding: 20px 12px;
+    flex-direction: column;
+    gap: 6px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    grid-column: 1;
+    grid-row: 2;
+    border-right: 1px solid $color-border;
+    border-bottom: 0;
+  }
+
+  .panel-nav__item {
+    width: 100%;
+    min-height: 52px;
+    padding: 0 16px;
+    justify-content: flex-start;
+    gap: 13px;
+    border-bottom: 0;
+    border-left: 3px solid transparent;
+    border-radius: $radius-sm;
+    font-size: 15px;
+
+    &--active {
+      border-left-color: $color-brand-500;
+      border-bottom-color: transparent;
+      background: $color-brand-50;
+    }
+
+    & > .icon {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  .voz-panel__content {
+    min-width: 0;
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .dashboard,
+  .workspace-view {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 24px;
+  }
+
+  .dashboard {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    align-items: start;
+    gap: 18px;
+  }
+
+  .quick-actions {
+    grid-column: span 4;
+  }
+
+  .summary-card {
+    grid-column: span 8;
+  }
+
+  .queue-card {
+    grid-column: span 7;
+  }
+
+  .context-card {
+    grid-column: span 5;
+  }
+
+  .quick-actions > button {
+    min-height: 114px;
+  }
+
+  .summary-card,
+  .context-card {
+    min-height: 114px;
+  }
+
+  .workspace-view {
+    gap: 20px;
+  }
+
+  .view-heading > h2 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  .library-overview {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .report-grid .stat {
+    min-height: 112px;
+    align-content: center;
+  }
+
+  @include max(1100px) {
+    grid-template-columns: 210px minmax(0, 1fr);
+
+    .quick-actions {
+      grid-column: span 5;
+    }
+
+    .summary-card {
+      grid-column: span 7;
+    }
+
+    .queue-card,
+    .context-card {
+      grid-column: 1 / -1;
+    }
+  }
+
+  @include max(760px) {
+    height: auto;
+    min-height: 100vh;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: 64px auto minmax(0, 1fr);
+
+    .panel-header {
+      min-height: 64px;
+      padding: 0 16px;
+      grid-column: 1;
+    }
+
+    .panel-header__logo {
+      width: 32px;
+      height: 32px;
+    }
+
+    .panel-header__product {
+      display: none;
+    }
+
+    .panel-nav {
+      min-height: 53px;
+      padding: 0 8px;
+      flex-direction: row;
+      gap: 0;
+      overflow-x: auto;
+      overflow-y: hidden;
+      grid-column: 1;
+      grid-row: 2;
+      border-right: 0;
+      border-bottom: 1px solid $color-border;
+    }
+
+    .panel-nav__item {
+      width: auto;
+      min-height: 53px;
+      padding: 12px;
+      justify-content: center;
+      gap: 6px;
+      border-bottom: 2px solid transparent;
+      border-left: 0;
+      border-radius: 0;
+      font-size: 14px;
+
+      &--active {
+        border-bottom-color: $color-brand-500;
+        background: transparent;
+      }
+
+      & > .icon {
+        width: 14px;
+        height: 14px;
+      }
+    }
+
+    .voz-panel__content {
+      grid-column: 1;
+      grid-row: 3;
+      overflow-y: visible;
+    }
+
+    .dashboard,
+    .workspace-view {
+      padding: 16px;
+    }
+
+    .dashboard {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 16px;
+    }
+
+    .quick-actions,
+    .summary-card,
+    .queue-card,
+    .context-card {
+      grid-column: 1;
+    }
+
+    .library-overview {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+}

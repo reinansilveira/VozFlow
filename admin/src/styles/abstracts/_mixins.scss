@@ -1,0 +1,19 @@
+@use 'tokens' as *;
+
+@mixin min($width) {
+  @media (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin focus-ring {
+  outline: 3px solid rgba($color-green, .4);
+  outline-offset: 2px;
+}
+
+@mixin card {
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  background: $color-surface;
+  box-shadow: $shadow-sm;
+}

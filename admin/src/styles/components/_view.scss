@@ -1,0 +1,126 @@
+@use '../abstracts' as *;
+
+.view {
+  display: grid;
+  gap: $space-4;
+
+  // Itens de grid não encolhem abaixo do conteúdo sem isso; a tabela rola dentro do cartão.
+  > * {
+    min-width: 0;
+  }
+
+  &__header {
+    display: flex;
+    gap: $space-3;
+    align-items: center;
+    justify-content: space-between;
+
+    h1 {
+      color: $color-navy;
+      font-size: 1.375rem;
+    }
+  }
+
+  &__intro {
+    color: $color-muted;
+    font-size: .875rem;
+  }
+}
+
+.panel-card {
+  @include card;
+}
+
+.toolbar {
+  display: grid;
+  gap: $space-3;
+
+  @include min($breakpoint-md) {
+    grid-template-columns: minmax(16rem, 1fr) auto;
+    align-items: end;
+  }
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-2;
+
+  &__item {
+    padding: $space-1 $space-3;
+    border: 1px solid $color-border;
+    border-radius: $radius-pill;
+    color: $color-muted;
+    background: $color-surface;
+    font-size: .8125rem;
+    font-weight: 600;
+    cursor: pointer;
+
+    &--active {
+      border-color: $color-navy;
+      color: #fff;
+      background: $color-navy;
+    }
+  }
+}
+
+.split {
+  display: grid;
+  gap: $space-4;
+  align-items: start;
+
+  > * {
+    min-width: 0;
+  }
+
+  &--open {
+    @include min($breakpoint-lg) {
+      grid-template-columns: minmax(0, 1fr) 26rem;
+    }
+  }
+}
+
+.tag {
+  display: inline-block;
+  margin-left: $space-2;
+  padding: 0 $space-2;
+  border-radius: $radius-pill;
+  color: $color-blue;
+  background: $color-blue-soft;
+  font-size: .6875rem;
+  font-weight: 700;
+  vertical-align: middle;
+
+  &--warning {
+    color: $color-amber;
+    background: $color-amber-soft;
+  }
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 2px $space-2;
+  border-radius: $radius-pill;
+  font-size: .75rem;
+  font-weight: 700;
+
+  &--ativa {
+    color: $color-green-dark;
+    background: $color-green-soft;
+  }
+
+  &--suspensa {
+    color: $color-amber;
+    background: $color-amber-soft;
+  }
+
+  &--revogada {
+    color: $color-red;
+    background: $color-red-soft;
+  }
+
+  &--expirada {
+    color: $color-muted;
+    background: $color-surface-muted;
+  }
+}

@@ -1,0 +1,61 @@
+@use '../abstracts' as *;
+
+.section {
+  padding-block: $space-8;
+
+  &--muted {
+    background: $color-surface;
+  }
+
+  &--dark {
+    color: #c9d6dd;
+    background: $color-navy;
+
+    .section__title {
+      color: $color-white;
+    }
+  }
+
+  &__eyebrow {
+    margin-bottom: $space-3;
+    font-size: .8125rem;
+    font-weight: $font-weight-bold;
+    color: $color-green;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+
+    &--light {
+      color: #7ee2b8;
+    }
+  }
+
+  &__header {
+    max-width: 40rem;
+    margin: 0 auto $space-7;
+    text-align: center;
+  }
+
+  &__title {
+    @include fluid-type(1.875rem, '3vw + 1rem', 2.625rem);
+  }
+
+  &__lead {
+    margin-top: $space-3;
+    font-size: 1.125rem;
+    color: $color-muted;
+  }
+}
+
+// CTA no meio da página, nos pontos de decisão.
+.inline-cta {
+  display: grid;
+  justify-items: center;
+  gap: $space-2;
+  margin-top: $space-7;
+  text-align: center;
+
+  &__note {
+    font-size: .9375rem;
+    color: $color-muted;
+  }
+}

@@ -1,0 +1,55 @@
+@use '../abstracts' as *;
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-2;
+  min-height: 2.25rem;
+  padding: $space-2 $space-4;
+  border: 1px solid $color-border;
+  border-radius: $radius-sm;
+  color: $color-text;
+  background: $color-surface;
+  font-size: .875rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+
+  &:hover:not(:disabled) {
+    border-color: $color-border-strong;
+  }
+
+  &:disabled {
+    opacity: .55;
+    cursor: not-allowed;
+  }
+
+  &--primary {
+    border-color: $color-green;
+    color: #fff;
+    background: $color-green;
+
+    &:hover:not(:disabled) {
+      border-color: $color-green-dark;
+      background: $color-green-dark;
+    }
+  }
+
+  &--danger {
+    border-color: rgba($color-red, .4);
+    color: $color-red;
+  }
+
+  &--ghost {
+    border-color: transparent;
+    background: transparent;
+  }
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-2;
+}

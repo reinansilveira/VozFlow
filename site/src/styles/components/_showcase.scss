@@ -1,0 +1,69 @@
+@use '../abstracts' as *;
+
+.showcase {
+  display: grid;
+  gap: $space-8;
+
+  &__item {
+    display: grid;
+    gap: $space-5;
+    align-items: center;
+
+    @include min(md) {
+      grid-template-columns: 1fr 1.2fr;
+      gap: $space-7;
+    }
+
+    &--reverse {
+      @include min(md) {
+        grid-template-columns: 1.2fr 1fr;
+
+        .showcase__text {
+          order: 2;
+        }
+      }
+    }
+  }
+
+  &__step {
+    display: grid;
+    place-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-bottom: $space-4;
+    font-weight: $font-weight-heavy;
+    color: $color-green;
+    background: $color-green-soft;
+    border-radius: 50%;
+  }
+
+  &__title {
+    font-size: 1.75rem;
+  }
+
+  &__desc {
+    margin-top: $space-2;
+    font-size: 1.125rem;
+    color: $color-muted;
+  }
+
+  &__media {
+    display: grid;
+    place-items: center;
+    min-width: 0;
+    padding: $space-6 $space-4;
+    background: $color-surface;
+    border-radius: $radius-lg;
+
+    @include min(md) {
+      padding: $space-7 $space-6;
+    }
+  }
+
+  // Para gravações de tela reais (ver comentário no HTML).
+  &__video {
+    width: 100%;
+    border-radius: $radius-md;
+    box-shadow: $shadow-lg;
+  }
+}

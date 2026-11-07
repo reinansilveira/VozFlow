@@ -1,0 +1,1098 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.schedule-workspace {
+  &__heading {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    & > div {
+      min-width: 0;
+
+      & > span {
+        color: $color-brand-600;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+      }
+
+      & > h2 {
+        margin: 2px 0 4px;
+        font-size: 20px;
+        line-height: 28px;
+      }
+
+      & > p {
+        margin: 0;
+        color: $color-muted;
+        font-size: 13px;
+      }
+    }
+
+    & > .button {
+      flex: 0 0 auto;
+    }
+  }
+}
+
+.schedule-notice,
+.schedule-state {
+  display: flex;
+  gap: 10px;
+  padding: 12px 14px;
+  align-items: flex-start;
+  border: 1px solid $color-brand-200;
+  border-radius: $radius-md;
+  color: $color-brand-900;
+  background: $color-brand-50;
+
+  & > .icon {
+    width: 16px;
+    height: 16px;
+    margin-top: 2px;
+    flex: 0 0 auto;
+    color: $color-brand-600;
+  }
+
+  strong,
+  p {
+    margin: 0;
+  }
+
+  strong {
+    display: block;
+    font-size: 12px;
+  }
+
+  p {
+    color: $color-brand-700;
+    font-size: 11px;
+  }
+}
+
+.schedule-state--error {
+  border-color: #fecaca;
+  color: #991b1b;
+  background: #fff7f7;
+
+  & > .icon,
+  p {
+    color: $color-danger;
+  }
+}
+
+.schedule-form,
+.campaign-card,
+.schedule-empty {
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  background: $color-surface;
+  box-shadow: $shadow-sm;
+}
+
+.schedule-form {
+  display: grid;
+  gap: 16px;
+  padding: 16px;
+  border-color: $color-brand-200;
+  box-shadow: 0 0 0 3px rgba(74, 222, 128, .08), $shadow-sm;
+
+  &__heading {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: space-between;
+
+    & > div {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+
+      & > span {
+        display: grid;
+        width: 38px;
+        height: 38px;
+        flex: 0 0 auto;
+        place-items: center;
+        border-radius: 11px;
+        color: $color-brand-600;
+        background: $color-brand-50;
+
+        & > .icon {
+          width: 16px;
+          height: 16px;
+        }
+      }
+
+      h3,
+      p {
+        margin: 0;
+      }
+
+      h3 {
+        font-size: 15px;
+      }
+
+      p {
+        color: $color-muted;
+        font-size: 11px;
+      }
+    }
+
+    & > small {
+      color: $color-muted;
+      font-size: 10px;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  &__primary {
+    display: grid;
+    gap: 13px;
+    padding: 14px;
+    border: 1px solid $color-border;
+    border-radius: $radius-md;
+    background: $color-surface-light;
+  }
+
+  &__errors {
+    display: flex;
+    gap: 8px;
+    padding: 10px 12px;
+    border-radius: $radius-sm;
+    color: #991b1b;
+    background: #fff7f7;
+    font-size: 11px;
+
+    & > .icon {
+      width: 14px;
+      height: 14px;
+      margin-top: 2px;
+      flex: 0 0 auto;
+      color: $color-danger;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+  }
+}
+
+.schedule-field {
+  min-width: 0;
+  color: $color-muted;
+  font-size: 11px;
+  font-weight: 600;
+
+  &--wide {
+    grid-column: 1 / -1;
+  }
+
+  & > input,
+  & > select,
+  & > textarea {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    margin-top: 4px;
+    padding: 8px 9px;
+    border: 1px solid $color-border;
+    border-radius: $radius-sm;
+    color: $color-text;
+    background: $white;
+    font-size: 12px;
+    font-weight: 400;
+  }
+
+  & > input,
+  & > select {
+    min-height: 38px;
+  }
+
+  & > textarea {
+    resize: vertical;
+  }
+
+  & > small {
+    display: block;
+    margin-top: 3px;
+    color: $color-subtle;
+    font-size: 10px;
+    font-weight: 400;
+  }
+}
+
+.schedule-recipients {
+  display: grid;
+  gap: 9px;
+  min-width: 0;
+  grid-column: 1 / -1;
+
+  &__label {
+    color: $color-muted;
+    font-size: 11px;
+    font-weight: 600;
+  }
+}
+
+.active-chat {
+  display: flex;
+  gap: 10px;
+  min-width: 0;
+  padding: 11px;
+  align-items: center;
+  border: 1px solid $color-brand-200;
+  border-radius: $radius-sm;
+  background: $color-brand-50;
+
+  &--empty {
+    border-color: $color-border;
+    background: $color-surface-light;
+  }
+
+  &__icon {
+    display: grid;
+    width: 34px;
+    height: 34px;
+    flex: 0 0 auto;
+    place-items: center;
+    border-radius: 50%;
+    color: $color-brand-700;
+    background: $color-brand-100;
+
+    & > .icon {
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  & > div {
+    min-width: 0;
+    flex: 1;
+
+    & > strong,
+    & > small {
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    & > strong {
+      font-size: 12px;
+    }
+
+    & > small {
+      color: $color-muted;
+      font-size: 10px;
+    }
+  }
+
+  & > .button {
+    flex: 0 0 auto;
+  }
+
+}
+
+.recipient-chips {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.recipient-chip {
+  display: inline-flex;
+  min-width: 0;
+  max-width: 100%;
+  padding: 6px 7px;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid $color-border;
+  border-radius: 999px;
+  background: $color-surface-light;
+
+  & > .icon {
+    width: 11px;
+    height: 11px;
+    flex: 0 0 auto;
+    color: $color-brand-600;
+  }
+
+  & > span {
+    min-width: 0;
+
+    & > strong,
+    & > small {
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    & > strong {
+      font-size: 10px;
+    }
+
+    & > small {
+      color: $color-muted;
+      font-size: 8px;
+    }
+  }
+
+  & > button {
+    display: grid;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    flex: 0 0 auto;
+    place-items: center;
+    border: 0;
+    border-radius: 50%;
+    color: $color-muted;
+    background: transparent;
+
+    &:hover {
+      color: $color-danger;
+      background: #fff7f7;
+    }
+
+    &:focus-visible {
+      outline: 2px solid $color-brand-500;
+      outline-offset: 1px;
+    }
+
+    & > .icon {
+      width: 8px;
+      height: 8px;
+    }
+  }
+}
+
+.manual-recipients {
+  border: 1px solid $color-border;
+  border-radius: $radius-sm;
+
+  & > summary {
+    padding: 8px 10px;
+    color: $color-muted;
+    font-size: 10px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  & > .schedule-field {
+    display: block;
+    padding: 0 10px 10px;
+  }
+}
+
+.schedule-check {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  align-self: center;
+  color: $color-text;
+  font-size: 12px;
+  cursor: pointer;
+
+  & > input {
+    width: 16px;
+    height: 16px;
+    accent-color: $color-brand-600;
+  }
+}
+
+.schedule-advanced {
+  overflow: hidden;
+  border: 1px solid $color-border;
+  border-radius: $radius-sm;
+
+  & > summary {
+    display: flex;
+    gap: 7px;
+    padding: 10px 12px;
+    align-items: center;
+    color: $color-text;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+
+    & > small {
+      color: $color-muted;
+      font-size: 9px;
+      font-weight: 400;
+    }
+  }
+
+  &[open] > summary {
+    border-bottom: 1px solid $color-border;
+    background: $color-surface-hover;
+  }
+
+  & > .schedule-form__grid {
+    padding: 12px;
+  }
+}
+
+.schedule-summary {
+  display: flex;
+  gap: 8px;
+  padding: 10px 12px;
+  align-items: center;
+  border-radius: $radius-sm;
+  color: $color-brand-900;
+  background: $color-brand-50;
+
+  & > .icon {
+    width: 14px;
+    height: 14px;
+    flex: 0 0 auto;
+    color: $color-brand-600;
+  }
+
+  & > p {
+    margin: 0;
+    font-size: 11px;
+  }
+}
+
+.schedule-preview {
+  display: grid;
+  grid-template-columns: .65fr 1fr 1fr;
+  gap: 8px;
+
+  & > div {
+    min-width: 0;
+    padding: 10px;
+    border-radius: $radius-sm;
+    background: $color-surface-light;
+
+    & > span,
+    & > strong {
+      display: block;
+    }
+
+    & > span {
+      margin-bottom: 3px;
+      color: $color-muted;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+
+    & > strong {
+      overflow: hidden;
+      font-size: 12px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+}
+
+.campaign-list {
+  display: grid;
+  gap: 12px;
+}
+
+.campaign-card {
+  overflow: hidden;
+  border-left: 3px solid $color-blue-500;
+
+  &--paused {
+    border-left-color: $color-warning-500;
+  }
+
+  &--completed {
+    border-left-color: $color-brand-500;
+  }
+
+  &--cancelled {
+    border-left-color: $color-subtle;
+    opacity: .82;
+  }
+
+  &__heading {
+    display: flex;
+    gap: 12px;
+    padding: 14px;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    h3,
+    p {
+      margin: 0;
+    }
+
+    h3 {
+      margin-top: 4px;
+      font-size: 15px;
+    }
+
+    p {
+      color: $color-muted;
+      font-size: 11px;
+    }
+  }
+
+  &__status {
+    display: inline-flex;
+    padding: 2px 7px;
+    border-radius: 999px;
+    color: $color-blue-600;
+    background: $color-blue-50;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+
+    &--paused {
+      color: #9a5800;
+      background: $color-warning-50;
+    }
+
+    &--completed {
+      color: $color-brand-700;
+      background: $color-brand-50;
+    }
+
+    &--cancelled {
+      color: $color-muted;
+      background: $color-surface-light;
+    }
+  }
+
+  &__date {
+    display: inline-flex;
+    gap: 5px;
+    flex: 0 0 auto;
+    align-items: center;
+    color: $color-muted;
+    font-size: 10px;
+
+    & > .icon {
+      width: 11px;
+      height: 11px;
+    }
+  }
+
+  &__progress {
+    padding: 0 14px 12px;
+
+    & > span {
+      display: block;
+      height: 6px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: $color-surface-light;
+
+      & > i {
+        display: block;
+        height: 100%;
+        border-radius: inherit;
+        background: $color-brand-500;
+        transition: width .25s ease;
+      }
+    }
+
+    & > p {
+      margin: 6px 0 0;
+      color: $color-muted;
+      font-size: 10px;
+    }
+  }
+
+  &__meta {
+    display: flex;
+    gap: 14px;
+    padding: 10px 14px;
+    border-top: 1px solid $color-border;
+    border-bottom: 1px solid $color-border;
+    background: $color-surface-hover;
+
+    & > span {
+      display: inline-flex;
+      gap: 5px;
+      align-items: center;
+      color: $color-muted;
+      font-size: 10px;
+
+      & > .icon {
+        width: 11px;
+        height: 11px;
+      }
+    }
+  }
+
+  &__deliveries {
+    border-bottom: 1px solid $color-border;
+
+    & > summary {
+      padding: 10px 14px;
+      color: $color-muted;
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    & > div {
+      max-height: 260px;
+      overflow-y: auto;
+      border-top: 1px solid $color-border;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    gap: 7px;
+    padding: 12px 14px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+}
+
+.delivery-row {
+  display: grid;
+  grid-template-columns: 9px minmax(0, 1fr) auto auto;
+  gap: 8px;
+  padding: 10px 14px;
+  align-items: center;
+  border-bottom: 1px solid $color-border;
+
+  &:last-child {
+    border-bottom: 0;
+  }
+
+  &__status {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: $color-blue-500;
+
+    &--processing,
+    &--retrying {
+      background: $color-warning-500;
+    }
+
+    &--sent {
+      background: $color-brand-500;
+    }
+
+    &--paused,
+    &--cancelled {
+      background: $color-subtle;
+    }
+
+    &--error {
+      background: $color-danger;
+    }
+  }
+
+  & > div {
+    min-width: 0;
+
+    & > strong,
+    & > small,
+    & > em {
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    & > strong {
+      font-size: 11px;
+    }
+
+    & > small {
+      color: $color-muted;
+      font-size: 9px;
+    }
+
+    & > em {
+      color: $color-danger;
+      font-size: 9px;
+      font-style: normal;
+      overflow: visible;
+      text-overflow: clip;
+      white-space: normal;
+      overflow-wrap: anywhere;
+    }
+  }
+
+  & > span:not(.delivery-row__status) {
+    color: $color-muted;
+    font-size: 9px;
+  }
+
+  & > .button {
+    min-height: 28px;
+    padding: 3px 7px;
+    font-size: 9px;
+  }
+}
+
+.schedule-empty {
+  display: grid;
+  min-height: 240px;
+  padding: 28px 18px;
+  place-items: center;
+  align-content: center;
+  text-align: center;
+
+  & > span {
+    display: grid;
+    width: 54px;
+    height: 54px;
+    margin-bottom: 10px;
+    place-items: center;
+    border-radius: 16px;
+    color: $color-brand-600;
+    background: $color-brand-50;
+
+    & > .icon {
+      width: 22px;
+      height: 22px;
+    }
+  }
+
+  h3,
+  p {
+    margin: 0;
+  }
+
+  h3 {
+    font-size: 15px;
+  }
+
+  p {
+    max-width: 340px;
+    margin: 4px 0 14px;
+    color: $color-muted;
+    font-size: 11px;
+  }
+}
+
+.voz-panel--dashboard {
+  .schedule-workspace__heading > div > h2 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  .campaign-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+  }
+}
+
+.voz-panel--dark {
+  .schedule-workspace__heading > div {
+    & > span { color: #73efae; }
+    & > p { color: $color-dark-muted; }
+  }
+
+  .schedule-notice,
+  .schedule-state {
+    border-color: #674c91;
+    color: $color-dark-text;
+    background: $color-confirm-surface;
+
+    & > .icon,
+    p {
+      color: $color-dark-muted;
+    }
+  }
+
+  .schedule-state--error,
+  .schedule-form__errors {
+    border-color: rgba(255, 82, 111, .35);
+    color: #ff9aad;
+    background: rgba(255, 82, 111, .08);
+
+    & > .icon,
+    p {
+      color: #ff718b;
+    }
+  }
+
+  .schedule-form,
+  .campaign-card,
+  .schedule-empty {
+    border-color: $color-dark-border;
+    color: $color-dark-text;
+    background: $color-dark-surface;
+    box-shadow: $shadow-dark-card;
+  }
+
+  .schedule-form {
+    border-color: $color-dark-purple;
+    box-shadow: 0 0 0 3px rgba(169, 139, 255, .1), $shadow-dark-card;
+
+    &__heading {
+      & > div > span {
+        color: $color-dark-cyan;
+        background: rgba(24, 216, 255, .12);
+      }
+
+      p,
+      & > small {
+        color: $color-dark-muted;
+      }
+    }
+
+    &__primary {
+      border-color: $color-dark-border;
+      background: $color-dark-surface-light;
+    }
+  }
+
+  .schedule-field {
+    color: $color-dark-muted;
+
+    & > input,
+    & > select,
+    & > textarea {
+      border-color: #67547f;
+      color: $color-dark-text;
+      background: #241b3a;
+
+      &:focus-visible {
+        outline: 2px solid $color-dark-purple;
+        outline-offset: 1px;
+      }
+    }
+
+    & > small {
+      color: $color-dark-subtle;
+    }
+  }
+
+  .schedule-recipients__label {
+    color: $color-dark-muted;
+  }
+
+  .active-chat {
+    border-color: rgba(115, 239, 174, .34);
+    background: rgba(115, 239, 174, .08);
+
+    &--empty {
+      border-color: $color-dark-border;
+      background: $color-dark-surface-light;
+    }
+
+    &__icon {
+      color: #73efae;
+      background: rgba(115, 239, 174, .12);
+    }
+
+    & > div > small {
+      color: $color-dark-muted;
+    }
+  }
+
+  .recipient-chip,
+  .manual-recipients {
+    border-color: $color-dark-border;
+    background: $color-dark-surface-light;
+  }
+
+  .recipient-chip {
+    & > .icon {
+      color: #73efae;
+    }
+
+    & > span > small,
+    & > button,
+    & + .manual-recipients > summary {
+      color: $color-dark-muted;
+    }
+
+    & > button:hover {
+      color: #ff718b;
+      background: rgba(255, 82, 111, .08);
+    }
+  }
+
+  .manual-recipients > summary {
+    color: $color-dark-muted;
+  }
+
+  .schedule-check {
+    color: $color-dark-text;
+  }
+
+  .schedule-advanced {
+    border-color: $color-dark-border;
+
+    & > summary {
+      color: $color-dark-text;
+
+      & > small {
+        color: $color-dark-muted;
+      }
+    }
+
+    &[open] > summary {
+      border-color: $color-dark-border;
+      background: $color-dark-surface-light;
+    }
+  }
+
+  .schedule-summary {
+    color: $color-dark-text;
+    background: $color-confirm-surface;
+
+    & > .icon {
+      color: $color-dark-cyan;
+    }
+  }
+
+  .schedule-preview > div {
+    background: $color-dark-surface-light;
+
+    & > span {
+      color: $color-dark-muted;
+    }
+  }
+
+  .campaign-card {
+    border-left-color: $color-dark-cyan;
+
+    &--paused { border-left-color: $color-dark-orange; }
+    &--completed { border-left-color: #73efae; }
+    &--cancelled { border-left-color: $color-dark-subtle; }
+
+    &__heading p,
+    &__date,
+    &__progress > p,
+    &__meta > span,
+    &__deliveries > summary {
+      color: $color-dark-muted;
+    }
+
+    &__progress > span,
+    &__status--cancelled {
+      background: $color-dark-surface-light;
+    }
+
+    &__meta,
+    &__deliveries,
+    &__deliveries > div {
+      border-color: $color-dark-border;
+    }
+
+    &__meta {
+      background: $color-dark-surface-light;
+    }
+  }
+
+  .delivery-row {
+    border-color: $color-dark-border;
+
+    & > div > small,
+    & > span:not(.delivery-row__status) {
+      color: $color-dark-muted;
+    }
+  }
+
+  .schedule-empty {
+    & > span {
+      color: $color-dark-cyan;
+      background: rgba(24, 216, 255, .12);
+    }
+
+    p { color: $color-dark-muted; }
+  }
+}
+
+@include max(760px) {
+  .voz-panel--dashboard .campaign-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@include max(520px) {
+  .schedule-workspace__heading {
+    flex-direction: column;
+
+    & > .button {
+      width: 100%;
+    }
+  }
+
+  .schedule-form {
+    &__heading {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+
+    &__grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    &__actions {
+      & > .button {
+        flex: 1;
+      }
+    }
+  }
+
+  .schedule-field--wide {
+    grid-column: auto;
+  }
+
+  .schedule-recipients {
+    grid-column: auto;
+  }
+
+  .active-chat {
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+    & > div {
+      width: calc(100% - 44px);
+      flex: none;
+    }
+
+    & > .button {
+      width: 100%;
+    }
+  }
+
+  .schedule-preview {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .campaign-card {
+    &__heading {
+      flex-direction: column;
+    }
+
+    &__meta {
+      flex-wrap: wrap;
+    }
+  }
+
+  .delivery-row {
+    grid-template-columns: 9px minmax(0, 1fr) auto;
+
+    & > .button {
+      grid-column: 2 / -1;
+      justify-self: start;
+    }
+  }
+}

@@ -1,0 +1,37 @@
+@use '../abstracts' as *;
+
+// Faixa de provas verdadeiras logo abaixo do hero.
+.proof {
+  padding-block: $space-6;
+  background: $color-white;
+  border-bottom: 1px solid $color-border;
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: $space-5;
+
+    @include min(md) {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+
+  &__item {
+    display: grid;
+    gap: $space-1;
+    text-align: center;
+  }
+
+  &__value {
+    @include fluid-type(1.75rem, '2.5vw + 1rem', 2.5rem);
+
+    font-weight: $font-weight-heavy;
+    line-height: 1.1;
+    color: $color-navy;
+  }
+
+  &__label {
+    font-size: .9375rem;
+    color: $color-muted;
+  }
+}

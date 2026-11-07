@@ -1,0 +1,47 @@
+@use '../abstracts' as *;
+
+.faq {
+  display: grid;
+  gap: $space-3;
+
+  &__item {
+    @include card;
+    border-radius: $radius-md;
+    transition: border-color $transition;
+
+    &[open] {
+      border-color: $color-green;
+    }
+  }
+
+  &__question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: $space-4;
+    padding: $space-4 $space-5;
+    font-weight: $font-weight-bold;
+    color: $color-navy;
+    cursor: pointer;
+    list-style: none;
+    border-radius: $radius-md;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+  }
+
+  &__icon {
+    color: $color-green;
+    transition: transform $transition;
+
+    .faq__item[open] & {
+      transform: rotate(45deg);
+    }
+  }
+
+  &__answer {
+    padding: 0 $space-5 $space-5;
+    color: $color-muted;
+  }
+}

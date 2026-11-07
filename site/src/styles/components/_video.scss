@@ -1,0 +1,77 @@
+@use '../abstracts' as *;
+
+// Vídeo de apresentação no hero: capa com botão de play; o som só toca depois do clique.
+.hero-video {
+  position: relative;
+  overflow: hidden;
+  background: $color-navy-soft;
+  border: 1px solid rgba($color-white, .12);
+  border-radius: $radius-lg;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, .45);
+
+  &__player {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+
+  &__play {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: $space-3;
+    color: $color-white;
+    text-align: center;
+    background: linear-gradient(180deg, rgba($color-navy, .15), rgba($color-navy, .65));
+    border: 0;
+    cursor: pointer;
+
+    &:hover .hero-video__icon {
+      transform: scale(1.08);
+    }
+  }
+
+  &__icon {
+    display: grid;
+    width: 5rem;
+    height: 5rem;
+    place-items: center;
+    color: $color-cta-text;
+    background: $color-cta;
+    border-radius: 50%;
+    box-shadow: 0 0 0 .6rem rgba($color-cta, .25);
+    transition: transform $transition;
+
+    .icon {
+      width: 2rem;
+      height: 2rem;
+      margin-left: .2rem;
+      fill: currentColor;
+    }
+
+    @include motion {
+      animation: button-glow 2.4s ease-in-out infinite;
+    }
+  }
+
+  &__label {
+    display: grid;
+    font-size: 1.125rem;
+    font-weight: $font-weight-heavy;
+
+    small {
+      font-size: .875rem;
+      font-weight: $font-weight-medium;
+      color: rgba($color-white, .8);
+    }
+  }
+
+  &--playing &__play {
+    display: none;
+  }
+}

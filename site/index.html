@@ -1,0 +1,808 @@
+<!doctype html>
+<html lang="pt-BR" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>document.documentElement.classList.remove('no-js');</script>
+    <title>VozFlow — Áudios, funis e mensagens prontas no WhatsApp Web</title>
+    <meta
+      name="description"
+      content="Envie áudios como gravados na hora em 1 clique, funis, mensagens prontas e agendamentos no WhatsApp Web. Envios ilimitados, 3 dias grátis sem cartão."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="color-scheme" content="light" />
+    <link rel="canonical" href="%SITE_URL%/" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap"
+    />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/brand/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="VozFlow" />
+    <meta property="og:title" content="VozFlow — Venda no WhatsApp no automático, com a sua voz" />
+    <meta
+      property="og:description"
+      content="Envie áudios como gravados na hora, mensagens prontas, funis e agendamentos direto do WhatsApp Web."
+    />
+    <meta property="og:url" content="%SITE_URL%/" />
+    <meta property="og:image" content="%SITE_URL%/brand/og-image.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="VozFlow: seu WhatsApp vendendo no automático, com a sua voz. 3 dias grátis, sem cartão." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="VozFlow — Venda no WhatsApp no automático, com a sua voz" />
+    <meta
+      name="twitter:description"
+      content="Envie áudios como gravados na hora, mensagens prontas, funis e agendamentos direto do WhatsApp Web."
+    />
+    <meta name="twitter:image" content="%SITE_URL%/brand/og-image.jpg" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "%SITE_URL%/#organization",
+            "name": "VozFlow",
+            "email": "reverbolanz@gmail.com",
+            "url": "%SITE_URL%/",
+            "logo": "%SITE_URL%/brand/icon-512.png"
+          },
+          {
+            "@type": "WebSite",
+            "@id": "%SITE_URL%/#website",
+            "url": "%SITE_URL%/",
+            "name": "VozFlow",
+            "inLanguage": "pt-BR",
+            "publisher": { "@id": "%SITE_URL%/#organization" }
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "VozFlow",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Google Chrome (Windows, macOS, Linux)",
+            "description": "Extensão para Chrome que organiza e envia áudios, mensagens prontas, mídias, documentos, funis e agendamentos no WhatsApp Web.",
+            "url": "%SITE_URL%/",
+            "publisher": { "@id": "%SITE_URL%/#organization" },
+            "offers": [
+              { "@type": "Offer", "name": "Essencial mensal", "price": "39.90", "priceCurrency": "BRL" },
+              { "@type": "Offer", "name": "Essencial anual", "price": "358.80", "priceCurrency": "BRL" },
+              { "@type": "Offer", "name": "Pro mensal", "price": "69.90", "priceCurrency": "BRL" },
+              { "@type": "Offer", "name": "Pro anual", "price": "598.80", "priceCurrency": "BRL" }
+            ]
+          },
+          {
+            "@type": "VideoObject",
+            "name": "VozFlow funcionando no WhatsApp Web",
+            "description": "Apresentação do VozFlow com gravação real no WhatsApp Web: áudio enviado como gravado na hora em 1 clique, funil com texto, áudio e catálogo, painel e agendamentos, planos e teste grátis.",
+            "thumbnailUrl": "%SITE_URL%/media/vozflow-demo-poster.jpg",
+            "contentUrl": "%SITE_URL%/media/vozflow-demo.mp4",
+            "uploadDate": "2026-11-05",
+            "duration": "PT71S",
+            "inLanguage": "pt-BR"
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Como o VozFlow funciona?",
+                "acceptedAnswer": { "@type": "Answer", "text": "É uma extensão do Chrome que funciona dentro do WhatsApp Web. Você salva áudios, mensagens e arquivos uma vez e envia para a conversa aberta com um clique." }
+              },
+              {
+                "@type": "Question",
+                "name": "O áudio chega como gravado na hora?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Sim. Chega como mensagem de voz, sem “encaminhado”, e o contato vê “gravando áudio…” antes de receber." }
+              },
+              {
+                "@type": "Question",
+                "name": "Tem limite de envios?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Não nos planos pagos. Nos agendamentos, você pode definir um limite diário para manter o ritmo natural." }
+              },
+              {
+                "@type": "Question",
+                "name": "Corro risco de ser banido do WhatsApp?",
+                "acceptedAnswer": { "@type": "Answer", "text": "O VozFlow envia pela sua conta, do jeito que você faria, e não faz disparo em massa. O risco vem de spam: fale só com quem quer receber suas mensagens." }
+              },
+              {
+                "@type": "Question",
+                "name": "Funciona no WhatsApp Business?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Sim, no WhatsApp comum e no Business, pelo WhatsApp Web no Chrome do computador." }
+              },
+              {
+                "@type": "Question",
+                "name": "Posso usar em mais de um número?",
+                "acceptedAnswer": { "@type": "Answer", "text": "O Essencial vale para 1 número e o Pro para até 3. Para trocar de número, é só chamar o suporte." }
+              },
+              {
+                "@type": "Question",
+                "name": "E se eu não gostar?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Você tem 7 dias para pedir o reembolso integral. Depois disso, pode cancelar quando quiser e usa até o fim do período pago." }
+              },
+              {
+                "@type": "Question",
+                "name": "O que acontece quando o teste acaba?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Os envios pausam até você assinar. Nada é cobrado automaticamente, porque o teste não pede cartão, e sua biblioteca continua salva no navegador." }
+              },
+              {
+                "@type": "Question",
+                "name": "Funciona no celular?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Não. O VozFlow é uma extensão do Chrome e funciona no WhatsApp Web, no computador (Windows, Mac ou Linux). Seu celular continua usando o WhatsApp normalmente." }
+              },
+              {
+                "@type": "Question",
+                "name": "É seguro? Vocês leem minhas conversas?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Não lemos suas conversas. Seus áudios, mensagens e contatos ficam no seu computador; nosso servidor recebe só o número conectado, para validar a licença." }
+              },
+              {
+                "@type": "Question",
+                "name": "Preciso deixar o computador ligado?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Só para os agendamentos: Chrome aberto e WhatsApp Web conectado. Os envios em 1 clique funcionam sempre que você estiver usando." }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+
+    <script type="module" src="/src/main.ts"></script>
+  </head>
+  <body>
+    <svg class="sprite" aria-hidden="true" focusable="false">
+      <symbol id="i-mic" viewBox="0 0 24 24"><path d="M12 3a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3Z" /><path d="M19 11a7 7 0 0 1-14 0M12 18v3" /></symbol>
+      <symbol id="i-flow" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="6" rx="1.5" /><rect x="14" y="15" width="7" height="6" rx="1.5" /><path d="M6.5 9v3a3 3 0 0 0 3 3h4.5" /><path d="m12 12.5 2.5 2.5-2.5 2.5" /></symbol>
+      <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2" /><path d="M3 10h18M8 3v4M16 3v4M12 14v3l2 1" /></symbol>
+      <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5Z" /><path d="m3 13 9 5 9-5" /></symbol>
+      <symbol id="i-cursor" viewBox="0 0 24 24"><rect x="3" y="14" width="5" height="6" rx="1.5" /><rect x="10" y="14" width="5" height="6" rx="1.5" /><rect x="17" y="14" width="4" height="6" rx="1.5" /><path d="M3 4h18v6H3z" /></symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6l-8-3Z" /><path d="m8.5 12 2.5 2.5 4.5-5" /></symbol>
+      <symbol id="i-chrome" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><circle cx="12" cy="12" r="3.5" /><path d="M12 8.5h8.2M8.9 13.8 4.8 6.6M15.1 13.8 11 21" /></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" /></symbol>
+      <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" /></symbol>
+      <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4V5Z" /></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5" /></symbol>
+      <symbol id="i-support" viewBox="0 0 24 24"><path d="M4 13v-1a8 8 0 0 1 16 0v1" /><rect x="3" y="13" width="4" height="6" rx="1.5" /><rect x="17" y="13" width="4" height="6" rx="1.5" /><path d="M19 19c0 1.5-2 2-5 2" /></symbol>
+      <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2" /><path d="M8 10V7a4 4 0 0 1 8 0v3" /></symbol>
+      <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7L8 5Z" /></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></symbol>
+      <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 3 5 14h6l-1 7 8-11h-6l1-7Z" /></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18" /></symbol>
+      <symbol id="i-store" viewBox="0 0 24 24"><path d="M4 9 5.5 4h13L20 9" /><path d="M4 9h16v2a3 3 0 0 1-5.3 1.9A3 3 0 0 1 12 14a3 3 0 0 1-2.7-1.1A3 3 0 0 1 4 11V9Z" /><path d="M5 14v6h14v-6M10 20v-4h4v4" /></symbol>
+      <symbol id="i-scissors" viewBox="0 0 24 24"><circle cx="6" cy="6" r="3" /><circle cx="6" cy="18" r="3" /><path d="M8.5 7.5 20 18M8.5 16.5 20 6" /></symbol>
+      <symbol id="i-health" viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z" /><path d="M12 9v5M9.5 11.5h5" /></symbol>
+      <symbol id="i-tool" viewBox="0 0 24 24"><path d="M14.5 5.5a4 4 0 0 0-5 5L4 16l4 4 5.5-5.5a4 4 0 0 0 5-5l-2.5 2.5-2.5-.5-.5-2.5 2.5-2.5Z" /></symbol>
+    </svg>
+
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <div class="progress" aria-hidden="true"><span class="progress__bar" data-progress></span></div>
+
+    <header class="header" data-header>
+      <div class="header__inner container">
+        <a class="brand" href="/" aria-label="VozFlow, página inicial">
+          <img class="brand__symbol" src="/brand/vozflow-symbol.svg" alt="" width="36" height="36" />
+          <span class="brand__name">VozFlow</span>
+        </a>
+
+        <button
+          class="header__toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="menu-principal"
+          aria-label="Abrir menu"
+          data-menu-toggle
+        >
+          <svg class="icon" aria-hidden="true"><use href="#i-menu" /></svg>
+        </button>
+
+        <nav class="nav" id="menu-principal" aria-label="Principal" data-menu>
+          <ul class="nav__list">
+            <li><a class="nav__link" href="#recursos">Recursos</a></li>
+            <li><a class="nav__link" href="#como-funciona">Como funciona</a></li>
+            <li><a class="nav__link" href="#planos">Planos</a></li>
+            <li><a class="nav__link" href="#perguntas">Dúvidas</a></li>
+          </ul>
+          <a class="button button--primary button--small nav__cta" href="#teste-gratis">Testar grátis</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="conteudo">
+      <section class="hero" aria-labelledby="hero-titulo">
+        <div class="hero__inner container">
+          <div class="hero__content">
+            <p class="hero__eyebrow"><span class="hero__pulse" aria-hidden="true"></span>Extensão para WhatsApp Web · 3 dias grátis</p>
+            <h1 class="hero__title" id="hero-titulo">Seu WhatsApp vendendo no automático. <span class="hero__highlight">Com a sua voz.</span></h1>
+            <p class="hero__lead">
+              Grave uma vez e envie em 1 clique. O cliente vê “gravando áudio…” e recebe como se você tivesse acabado de
+              gravar. Funis, mensagens prontas e agendamentos, direto no WhatsApp Web.
+            </p>
+            <div class="hero__actions">
+              <a class="button button--primary button--large button--glow" href="#teste-gratis" data-track="teste">Começar meu teste grátis</a>
+              <a class="button button--ghost-light button--large" href="#planos">Ver planos e preços</a>
+            </div>
+            <ul class="hero__checks">
+              <li><svg class="icon icon--small" aria-hidden="true"><use href="#i-check" /></svg>Sem cartão de crédito</li>
+              <li><svg class="icon icon--small" aria-hidden="true"><use href="#i-check" /></svg>Instala em 1 minuto</li>
+              <li><svg class="icon icon--small" aria-hidden="true"><use href="#i-check" /></svg>WhatsApp e Business</li>
+            </ul>
+          </div>
+
+          <figure class="hero__visual" id="video" data-parallax>
+            <div class="hero-video" data-hero-video>
+              <video
+                class="hero-video__player"
+                playsinline
+                preload="none"
+                poster="/media/vozflow-demo-poster.jpg"
+                width="1280"
+                height="720"
+                aria-label="Vídeo: VozFlow funcionando no WhatsApp Web, com narração"
+              >
+                <source src="/media/vozflow-demo.mp4" type="video/mp4" />
+              </video>
+              <button class="hero-video__play" type="button" data-hero-play>
+                <span class="hero-video__icon" aria-hidden="true"><svg class="icon"><use href="#i-play" /></svg></span>
+                <span class="hero-video__label">Assista em 1 minuto<small>Gravação real, com som</small></span>
+              </button>
+            </div>
+            <p class="hero__float hero__float--top" aria-hidden="true"><svg class="icon icon--small"><use href="#i-mic" /></svg>Áudio enviado em 1 clique</p>
+            <p class="hero__float hero__float--bottom" aria-hidden="true"><svg class="icon icon--small"><use href="#i-check" /></svg>Sem “encaminhado”</p>
+          </figure>
+        </div>
+      </section>
+
+      <!-- Provas verdadeiras. Quando houver números reais de clientes, acrescente aqui (nunca invente). -->
+      <section class="proof" aria-label="Por que o VozFlow">
+        <ul class="proof__list container">
+          <li class="proof__item" data-reveal><strong class="proof__value">1 clique</strong><span class="proof__label">para enviar um áudio pronto</span></li>
+          <li class="proof__item" data-reveal><strong class="proof__value">Ilimitado</strong><span class="proof__label">envios em todos os planos pagos</span></li>
+          <li class="proof__item" data-reveal><strong class="proof__value">3 dias</strong><span class="proof__label">grátis, sem cartão de crédito</span></li>
+          <li class="proof__item" data-reveal><strong class="proof__value">7 dias</strong><span class="proof__label">de garantia ou seu dinheiro de volta</span></li>
+        </ul>
+        <ul class="seals container" aria-label="Segurança e garantias">
+          <li class="seals__item"><svg class="icon icon--small" aria-hidden="true"><use href="#i-lock" /></svg>Pagamento seguro com Pix ou cartão</li>
+          <li class="seals__item"><svg class="icon icon--small" aria-hidden="true"><use href="#i-shield" /></svg>Dados protegidos pela LGPD</li>
+          <li class="seals__item"><svg class="icon icon--small" aria-hidden="true"><use href="#i-chrome" /></svg>Extensão oficial para Google Chrome</li>
+          <li class="seals__item"><svg class="icon icon--small" aria-hidden="true"><use href="#i-support" /></svg>Suporte humano em português</li>
+        </ul>
+      </section>
+
+      <!-- Prova social real: preencha site/src/social-proof.ts. Sem dados, a seção continua escondida. -->
+      <section class="section social" aria-labelledby="social-titulo" data-social-proof hidden>
+        <div class="container">
+          <h2 class="visually-hidden" id="social-titulo">Quem usa o VozFlow</h2>
+          <div class="social__crowd" data-reveal data-social-crowd hidden>
+            <ul class="social__avatars" data-social-avatars></ul>
+            <p class="social__headline" data-social-headline></p>
+          </div>
+          <ul class="social__stats" data-social-stats></ul>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="dor-titulo">
+        <div class="container">
+          <header class="section__header" data-reveal>
+            <p class="section__eyebrow">O problema</p>
+            <h2 class="section__title" id="dor-titulo">Atender no WhatsApp na mão está custando vendas</h2>
+            <p class="section__lead">Quem responde primeiro, vende primeiro. E responder tudo na mão não escala.</p>
+          </header>
+          <ul class="pain">
+            <li class="pain__item" data-reveal>
+              <span class="pain__icon"><svg class="icon" aria-hidden="true"><use href="#i-mic" /></svg></span>
+              <h3 class="pain__title">O mesmo áudio, 30 vezes por dia</h3>
+              <p class="pain__text">Apresentação, preço, como comprar. Cada gravação leva minutos que você não tem.</p>
+            </li>
+            <li class="pain__item" data-reveal>
+              <span class="pain__icon"><svg class="icon" aria-hidden="true"><use href="#i-clock" /></svg></span>
+              <h3 class="pain__title">O cliente espera e esfria</h3>
+              <p class="pain__text">Enquanto você digita, ele já está falando com o concorrente.</p>
+            </li>
+            <li class="pain__item" data-reveal>
+              <span class="pain__icon"><svg class="icon" aria-hidden="true"><use href="#i-layers" /></svg></span>
+              <h3 class="pain__title">Cada atendimento sai de um jeito</h3>
+              <p class="pain__text">Esqueceu o Pix, o catálogo, o prazo. Venda perdida por detalhe.</p>
+            </li>
+            <li class="pain__item" data-reveal>
+              <span class="pain__icon"><svg class="icon" aria-hidden="true"><use href="#i-calendar" /></svg></span>
+              <h3 class="pain__title">O follow-up fica para depois</h3>
+              <p class="pain__text">E “depois” vira nunca. O cliente que ia comprar some.</p>
+            </li>
+          </ul>
+          <p class="pain__bridge" data-reveal>O VozFlow resolve os quatro. <strong>Sem trocar de número e sem aprender sistema novo.</strong></p>
+        </div>
+      </section>
+
+      <section class="section section--dark" aria-labelledby="calc-titulo">
+        <div class="container calculator" data-calculator>
+          <div class="calculator__intro" data-reveal>
+            <p class="section__eyebrow section__eyebrow--light">Faça a conta</p>
+            <h2 class="section__title" id="calc-titulo">Quanto tempo você perde por mês?</h2>
+            <p class="calculator__text">Ajuste com a sua rotina. A conta considera uns 5 segundos por envio com o VozFlow.</p>
+          </div>
+          <form class="calculator__panel" data-reveal onsubmit="return false">
+            <label class="calculator__field">
+              <span class="calculator__label">Áudios e mensagens repetidas por dia <output data-calc-out="per-day">25</output></span>
+              <input type="range" min="5" max="150" step="5" value="25" data-calc-input="per-day" />
+            </label>
+            <label class="calculator__field">
+              <span class="calculator__label">Minutos para gravar ou digitar cada um <output data-calc-out="minutes">1,5</output></span>
+              <input type="range" min="0.5" max="5" step="0.5" value="1.5" data-calc-input="minutes" />
+            </label>
+            <label class="calculator__field">
+              <span class="calculator__label">Dias de atendimento por mês <output data-calc-out="days">22</output></span>
+              <input type="range" min="10" max="30" step="1" value="22" data-calc-input="days" />
+            </label>
+            <div class="calculator__result" aria-live="polite">
+              <p class="calculator__big"><strong data-calc-result="hours">13</strong> horas por mês</p>
+              <p class="calculator__small">de volta para você. São <strong data-calc-result="days">20</strong> dias de trabalho por ano.</p>
+            </div>
+            <a class="button button--primary button--large button--block" href="#teste-gratis" data-track="teste">Quero esse tempo de volta</a>
+          </form>
+        </div>
+      </section>
+
+      <section class="section section--muted" id="recursos" aria-labelledby="recursos-titulo">
+        <div class="container">
+          <header class="section__header" data-reveal>
+            <p class="section__eyebrow">Recursos</p>
+            <h2 class="section__title" id="recursos-titulo">Tudo para vender no WhatsApp, em um só lugar</h2>
+            <p class="section__lead">Sem limite de envios. Sem pagar a mais por recurso.</p>
+          </header>
+          <ul class="features">
+            <li class="features__item features__item--wide" data-reveal>
+              <span class="features__icon"><svg class="icon" aria-hidden="true"><use href="#i-mic" /></svg></span>
+              <h3 class="features__title">Áudio humanizado</h3>
+              <p class="features__text">Chega como mensagem de voz gravada na hora, com “gravando áudio…” antes. Nada de “encaminhado”.</p>
+            </li>
+            <li class="features__item" data-reveal>
+              <span class="features__icon"><svg class="icon" aria-hidden="true"><use href="#i-chat" /></svg></span>
+              <h3 class="features__title">Mensagens prontas</h3>
+              <p class="features__text">Preço, Pix, endereço e boas-vindas em 1 clique.</p>
+            </li>
+            <li class="features__item" data-reveal>
+              <span class="features__icon"><svg class="icon" aria-hidden="true"><use href="#i-layers" /></svg></span>
+              <h3 class="features__title">Imagens e documentos</h3>
+              <p class="features__text">Catálogo, cardápio e PDF sem procurar arquivo.</p>
+            </li>
+            <li class="features__item" data-reveal>
+              <span class="features__icon"><svg class="icon" aria-hidden="true"><use href="#i-flow" /></svg></span>
+              <h3 class="features__title">Funis de venda</h3>
+              <p class="features__text">Texto, áudio e imagem em sequência, com pausas naturais.</p>
+            </li>
+            <li class="features__item" data-reveal>
+              <span class="features__icon"><svg class="icon" aria-hidden="true"><use href="#i-calendar" /></svg></span>
+              <h3 class="features__title">Agendamentos</h3>
+              <p class="features__text">Follow-up no dia e hora certos, com pausa e status de cada envio.</p>
+            </li>
+            <li class="features__item" data-reveal>
+              <span class="features__icon"><svg class="icon" aria-hidden="true"><use href="#i-cursor" /></svg></span>
+              <h3 class="features__title">Atalhos na conversa</h3>
+              <p class="features__text">Os itens que você mais usa aparecem embaixo do chat.</p>
+            </li>
+            <li class="features__item" data-reveal>
+              <span class="features__icon"><svg class="icon" aria-hidden="true"><use href="#i-lock" /></svg></span>
+              <h3 class="features__title">Privacidade de verdade</h3>
+              <p class="features__text">Sua biblioteca fica no seu computador. Não lemos suas conversas.</p>
+            </li>
+            <li class="features__item features__item--soon" data-reveal>
+              <span class="features__icon"><svg class="icon" aria-hidden="true"><use href="#i-bolt" /></svg></span>
+              <h3 class="features__title">Gatilhos e remarketing <span class="badge">Em breve</span></h3>
+              <p class="features__text">Funis por palavra-chave e campanhas de reativação. Inclusos no Pro.</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!--
+        Demonstrações: para usar gravações de tela reais, troque o conteúdo de cada .showcase__media por
+        <video class="showcase__video" src="/media/arquivo.mp4" poster="/media/arquivo.jpg" autoplay muted loop playsinline></video>
+      -->
+      <section class="section" id="como-funciona" aria-labelledby="como-titulo">
+        <div class="container">
+          <header class="section__header" data-reveal>
+            <p class="section__eyebrow">Como funciona</p>
+            <h2 class="section__title" id="como-titulo">Do zero à primeira venda em 3 minutos</h2>
+          </header>
+
+          <div class="showcase">
+            <article class="showcase__item" data-reveal>
+              <div class="showcase__text">
+                <span class="showcase__step">1</span>
+                <h3 class="showcase__title">Instale com um clique</h3>
+                <p class="showcase__desc">Adicione ao Chrome, abra o WhatsApp Web e pronto. Sem trocar de número.</p>
+              </div>
+              <figure class="showcase__media" role="img" aria-label="Animação: botão Adicionar ao Chrome sendo clicado e extensão instalada">
+                <div class="device device--compact" aria-hidden="true">
+                  <div class="device__bar"><i></i><i></i><i></i><span class="device__url">chromewebstore.google.com</span></div>
+                  <div class="store">
+                    <img class="store__logo" src="/brand/vozflow-symbol.svg" alt="" width="56" height="56" loading="lazy" />
+                    <div class="store__info">
+                      <span class="store__name">VozFlow</span>
+                      <span class="store__meta">Extensão · Produtividade</span>
+                    </div>
+                    <span class="store__button demo-install"><span class="demo-install__idle">Adicionar ao Chrome</span><span class="demo-install__done">Adicionado</span></span>
+                    <span class="store__toast demo-toast"><svg class="icon icon--small"><use href="#i-check" /></svg>VozFlow pronto no WhatsApp Web</span>
+                  </div>
+                </div>
+              </figure>
+            </article>
+
+            <article class="showcase__item showcase__item--reverse" data-reveal>
+              <div class="showcase__text">
+                <span class="showcase__step">2</span>
+                <h3 class="showcase__title">Grave uma vez, envie sempre</h3>
+                <p class="showcase__desc">Salve seus melhores áudios. O cliente vê “gravando áudio…” e recebe como se fosse agora.</p>
+              </div>
+              <figure class="showcase__media" role="img" aria-label="Animação: contato vê gravando áudio e recebe uma mensagem de voz">
+                <div class="phone" aria-hidden="true">
+                  <div class="wa">
+                    <div class="wa__header">
+                      <span class="wa__name">Carlos Mendes</span>
+                      <span class="wa__status demo-status"><span class="demo-status__idle">online</span><span class="demo-status__busy">gravando áudio…</span></span>
+                    </div>
+                    <div class="wa__body">
+                      <p class="wa__bubble wa__bubble--in">Tem disponível ainda?</p>
+                      <div class="wa__bubble wa__bubble--out wa__bubble--audio demo-audio">
+                        <span class="wa__play"></span><span class="wa__track"><span class="wa__progress"></span></span><span class="wa__time">1:05</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </figure>
+            </article>
+
+            <article class="showcase__item" data-reveal>
+              <div class="showcase__text">
+                <span class="showcase__step">3</span>
+                <h3 class="showcase__title">Deixe o funil vender</h3>
+                <p class="showcase__desc">Um clique dispara texto, áudio e catálogo em sequência, no ritmo de uma conversa real.</p>
+              </div>
+              <figure class="showcase__media" role="img" aria-label="Animação: funil enviando texto, áudio e imagem em sequência">
+                <div class="phone" aria-hidden="true">
+                  <div class="wa">
+                    <div class="wa__header">
+                      <span class="wa__name">Fernanda Lima</span>
+                      <span class="wa__status">online</span>
+                    </div>
+                    <div class="wa__body">
+                      <p class="wa__bubble wa__bubble--out demo-funnel demo-funnel--1">Oi, Fernanda! Tudo bem? 😊</p>
+                      <div class="wa__bubble wa__bubble--out wa__bubble--audio demo-funnel demo-funnel--2">
+                        <span class="wa__play"></span><span class="wa__track"><span class="wa__progress wa__progress--full"></span></span><span class="wa__time">0:38</span>
+                      </div>
+                      <div class="wa__bubble wa__bubble--out wa__bubble--image demo-funnel demo-funnel--3">
+                        <span class="wa__image"><svg class="icon"><use href="#i-layers" /></svg></span>
+                        Catálogo de produtos
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </figure>
+            </article>
+
+            <article class="showcase__item showcase__item--reverse" data-reveal>
+              <div class="showcase__text">
+                <span class="showcase__step">4</span>
+                <h3 class="showcase__title">Agende e esqueça</h3>
+                <p class="showcase__desc">Retornos e follow-ups saem no horário certo, com pausa e status de cada envio.</p>
+              </div>
+              <figure class="showcase__media" role="img" aria-label="Animação: campanha agendada marcando cada contato como enviado">
+                <div class="panel" aria-hidden="true">
+                  <div class="panel__header">
+                    <span class="panel__title">Campanha: Retorno de clientes</span>
+                    <span class="panel__badge">Ativa</span>
+                  </div>
+                  <div class="panel__progress"><span class="panel__bar demo-bar"></span></div>
+                  <ul class="panel__list">
+                    <li class="panel__row">Mariana Costa<span class="panel__state demo-state demo-state--1"><span class="demo-state__wait">Pendente</span><span class="demo-state__ok">Enviado</span></span></li>
+                    <li class="panel__row">João Pedro<span class="panel__state demo-state demo-state--2"><span class="demo-state__wait">Pendente</span><span class="demo-state__ok">Enviado</span></span></li>
+                    <li class="panel__row">Ana Ribeiro<span class="panel__state demo-state demo-state--3"><span class="demo-state__wait">Pendente</span><span class="demo-state__ok">Enviado</span></span></li>
+                    <li class="panel__row">Loja Sol<span class="panel__state demo-state demo-state--4"><span class="demo-state__wait">Pendente</span><span class="demo-state__ok">Enviado</span></span></li>
+                  </ul>
+                </div>
+              </figure>
+            </article>
+          </div>
+          <div class="inline-cta" data-reveal>
+            <a class="button button--primary button--large" href="#teste-gratis" data-track="teste">Quero testar grátis agora</a>
+            <p class="inline-cta__note">3 dias com tudo liberado · sem cartão</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--muted" aria-labelledby="publico-titulo">
+        <div class="container">
+          <header class="section__header" data-reveal>
+            <p class="section__eyebrow">Para quem é</p>
+            <h2 class="section__title" id="publico-titulo">Feito para quem vende pelo WhatsApp</h2>
+          </header>
+          <ul class="audience">
+            <li class="audience__item" data-reveal><h3 class="audience__title">Lojas e e-commerce</h3><p class="audience__text">Catálogo, frete e Pix em segundos.</p></li>
+            <li class="audience__item" data-reveal><h3 class="audience__title">Infoprodutores e afiliados</h3><p class="audience__text">Funil de apresentação que trabalha por você.</p></li>
+            <li class="audience__item" data-reveal><h3 class="audience__title">Clínicas, salões e estética</h3><p class="audience__text">Confirmação e lembrete de horário sem esforço.</p></li>
+            <li class="audience__item" data-reveal><h3 class="audience__title">Prestadores de serviço</h3><p class="audience__text">Orçamento padrão com a sua voz.</p></li>
+            <li class="audience__item" data-reveal><h3 class="audience__title">Corretores e consultores</h3><p class="audience__text">Follow-up no dia certo, sem planilha.</p></li>
+            <li class="audience__item" data-reveal><h3 class="audience__title">Delivery e restaurantes</h3><p class="audience__text">Cardápio e horários respondidos na hora.</p></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="comparar-titulo">
+        <div class="container container--narrow">
+          <header class="section__header" data-reveal>
+            <p class="section__eyebrow">Antes e depois</p>
+            <h2 class="section__title" id="comparar-titulo">O seu dia, sem e com VozFlow</h2>
+          </header>
+          <div class="compare" data-reveal>
+            <table class="compare__table">
+              <thead>
+                <tr><th scope="col"><span class="visually-hidden">Situação</span></th><th scope="col">Sem VozFlow</th><th scope="col" class="compare__us">Com VozFlow</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">Áudio de apresentação</th><td><svg class="icon icon--small compare__no" aria-hidden="true"><use href="#i-x" /></svg>Grava de novo toda vez</td><td class="compare__us"><svg class="icon icon--small compare__yes" aria-hidden="true"><use href="#i-check" /></svg>1 clique, como gravado agora</td></tr>
+                <tr><th scope="row">Tempo de resposta</th><td><svg class="icon icon--small compare__no" aria-hidden="true"><use href="#i-x" /></svg>Minutos ou horas</td><td class="compare__us"><svg class="icon icon--small compare__yes" aria-hidden="true"><use href="#i-check" /></svg>Segundos</td></tr>
+                <tr><th scope="row">Catálogo e PDF</th><td><svg class="icon icon--small compare__no" aria-hidden="true"><use href="#i-x" /></svg>Procura na galeria</td><td class="compare__us"><svg class="icon icon--small compare__yes" aria-hidden="true"><use href="#i-check" /></svg>Atalho embaixo do chat</td></tr>
+                <tr><th scope="row">Follow-up</th><td><svg class="icon icon--small compare__no" aria-hidden="true"><use href="#i-x" /></svg>Depende de lembrar</td><td class="compare__us"><svg class="icon icon--small compare__yes" aria-hidden="true"><use href="#i-check" /></svg>Agendado no horário certo</td></tr>
+                <tr><th scope="row">Padrão de atendimento</th><td><svg class="icon icon--small compare__no" aria-hidden="true"><use href="#i-x" /></svg>Cada vez de um jeito</td><td class="compare__us"><svg class="icon icon--small compare__yes" aria-hidden="true"><use href="#i-check" /></svg>Funil testado e humanizado</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="inline-cta" data-reveal>
+            <a class="button button--primary button--large" href="#teste-gratis" data-track="teste">Quero o dia com VozFlow</a>
+            <p class="inline-cta__note">Comece hoje · 7 dias de garantia ao assinar</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Preços: proposta registrada na SPEC. Os links "Assinar" devem apontar para os checkouts da Cakto. -->
+      <section class="section section--muted" id="planos" aria-labelledby="planos-titulo" data-pricing data-period="anual">
+        <div class="container">
+          <header class="section__header" data-reveal>
+            <p class="section__eyebrow">Planos</p>
+            <h2 class="section__title" id="planos-titulo">Tudo ilimitado por menos de R$ 1 por dia</h2>
+            <p class="section__lead">Sem limite de envios em nenhum plano pago. Sem taxa escondida.</p>
+          </header>
+
+          <div class="period" role="group" aria-label="Período de cobrança" data-reveal>
+            <button type="button" class="period__option" data-period-option="mensal" aria-pressed="false">Mensal</button>
+            <button type="button" class="period__option" data-period-option="anual" aria-pressed="true">Anual <span class="period__save">até 28% off</span></button>
+          </div>
+
+          <!-- Oferta de lançamento (mantida): quem assinar agora renova sempre pelo mesmo preço. Para reajustar, crie novas ofertas na Cakto sem mexer nas antigas. -->
+          <p class="founder" data-reveal>
+            <span class="founder__tag">Oferta de lançamento</span>
+            Assine até <strong>31/12/2026</strong> e garanta o <strong>preço de fundador para sempre</strong>, enquanto sua
+            assinatura estiver ativa.
+          </p>
+
+          <ul class="pricing">
+            <li class="pricing__card" data-reveal>
+              <h3 class="pricing__name">Teste grátis</h3>
+              <p class="pricing__for">Para conhecer sem compromisso</p>
+              <p class="pricing__price"><span class="pricing__currency">R$</span>0</p>
+              <p class="pricing__billing">por 3 dias · sem cartão</p>
+              <a class="button button--outline button--block" href="#teste-gratis" data-track="teste">Começar grátis</a>
+              <ul class="pricing__list">
+                <li><svg class="icon icon--small" aria-hidden="true"><use href="#i-check" /></svg>Todos os recursos liberados</li>
+                <li><svg class="icon icon--small" aria-hidden="true"><use href="#i-check" /></svg>Envios ilimitados no teste</li>
+                <li><svg class="icon icon--small" aria-hidden="true"><use href="#i-check" /></svg>1 número de WhatsApp</li>
+              </ul>
+            </li>
+
+            <li class="pricing__card" data-reveal>
+              <h3 class="pricing__name">Essencial</h3>
+              <p class="pricing__for">Para quem atende sozinho</p>
+              <p class="pricing__price">
+                <s class="pricing__old" data-old-anual="R$ 39,90" data-old-mensal="">R$ 39,90</s><span class="pricing__currency">R$</span><span data-price-anual="29,90" data-price-mensal="39,90">29,90</span><span class="pricing__suffix">/mês</span>
+              </p>
+              <p class="pricing__billing" data-billing-anual="R$ 358,80 por ano · economize 25%" data-billing-mensal="cobrado todo mês">R$ 358,80 por ano · economize 25%</p>
+              <a class="button button--primary button--block" href="#teste-gratis" data-track="assinar" data-plan="Essencial">Assinar Essencial</a>
+              <ul class="pricing__list">
+                <li><svg class="icon icon--small" aria-hidden="true"><use href="#i-check" /></svg><strong>1 número</strong> de WhatsApp</li>
+                <li><svg class="icon icon--small" aria-hidden="true"><use href="#i-check" /></svg>Áudios ilimitados como gravados na hora</li>
+                <li><svg class="icon icon--small" aria-hidden="true"><use href="#i-check" /></svg>Mensagens, imagens e documentos ilimitados</li>
+                <li><svg class="icon icon--small" aria-hidden="true"><use href="#i-check" /></svg>Funis ilimitados</li>
+                <li><svg class="icon icon--small" aria-hidden="true"><use href="#i-check" /></svg>Agendamentos ilimitados</li>
+                <li><svg class="icon icon--small" aria-hidden="true"><use href="#i-check" /></svg>Atalhos na conversa</li>
+                <li><svg class="icon icon--small" aria-hidden="true"><use href="#i-check" /></svg>Atualizações inclusas</li>
+                <li><svg class="icon icon--small" aria-hidden="true"><use href="#i-check" /></svg>Suporte pelo WhatsApp</li>
+              </ul>
+            </li>
+
+            <li class="pricing__card pricing__card--featured" data-reveal>
+              <p class="pricing__badge">Recomendado</p>
+              <h3 class="pricing__name">Pro</h3>
+              <p class="pricing__for">Para equipes e quem tem mais de um número</p>
+              <p class="pricing__price">
+                <s class="pricing__old" data-old-anual="R$ 69,90" data-old-mensal="">R$ 69,90</s><span class="pricing__currency">R$</span><span data-price-anual="49,90" data-price-mensal="69,90">49,90</span><span class="pricing__suffix">/mês</span>
+              </p>
+              <p class="pricing__billing" data-billing-anual="R$ 598,80 por ano · economize 28%" data-billing-mensal="cobrado todo mês">R$ 598,80 por ano · economize 28%</p>
+              <a class="button button--primary button--block button--glow" href="#teste-gratis" data-track="assinar" data-plan="Pro">Assinar Pro</a>
+              <ul class="pricing__list">
+                <li><svg class="icon icon--small" aria-hidden="true"><use href="#i-check" /></svg><strong>Até 3 números</strong> de WhatsApp</li>
+                <li><svg class="icon icon--small" aria-hidden="true"><use href="#i-check" /></svg>Tudo do Essencial, ilimitado</li>
+                <li><svg class="icon icon--small" aria-hidden="true"><use href="#i-check" /></svg>Suporte prioritário</li>
+                <li><svg class="icon icon--small" aria-hidden="true"><use href="#i-check" /></svg>Gatilhos e remarketing inclusos <span class="badge">Em breve</span></li>
+                <li><svg class="icon icon--small" aria-hidden="true"><use href="#i-check" /></svg>Acesso antecipado às novidades</li>
+              </ul>
+            </li>
+          </ul>
+
+          <ul class="pricing__assurance" data-reveal>
+            <li><svg class="icon icon--small" aria-hidden="true"><use href="#i-shield" /></svg>7 dias de garantia</li>
+            <li><svg class="icon icon--small" aria-hidden="true"><use href="#i-check" /></svg>Cancele quando quiser</li>
+            <li><svg class="icon icon--small" aria-hidden="true"><use href="#i-lock" /></svg>Pagamento seguro com Pix ou cartão</li>
+          </ul>
+
+          <p class="requirements" data-reveal>
+            <svg class="icon icon--small" aria-hidden="true"><use href="#i-chrome" /></svg>
+            <span><strong>Requisitos:</strong> computador (Windows, Mac ou Linux) com Google Chrome e WhatsApp Web.
+            Não funciona no aplicativo do celular.</span>
+          </p>
+
+          <!-- WhatsApp de suporte. -->
+          <p class="pricing__more" data-reveal>
+            Precisa de mais de 3 números para a sua equipe?
+            <a href="https://wa.me/5579998426046?text=Ol%C3%A1!%20Quero%20o%20VozFlow%20para%20mais%20de%203%20n%C3%BAmeros." rel="noopener">Fale com a gente</a>
+          </p>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="garantia-titulo">
+        <div class="container container--narrow">
+          <div class="guarantee" data-reveal>
+            <div class="guarantee__seal" aria-hidden="true"><strong>7</strong><span>dias</span></div>
+            <div>
+              <h2 class="guarantee__title" id="garantia-titulo">Risco zero. De verdade.</h2>
+              <p class="guarantee__text">
+                Teste 3 dias sem pagar nada. Se assinar e não gostar em até 7 dias, devolvemos 100% do valor. Basta pedir.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--muted" id="perguntas" aria-labelledby="perguntas-titulo">
+        <div class="container container--narrow">
+          <header class="section__header" data-reveal>
+            <p class="section__eyebrow">Dúvidas</p>
+            <h2 class="section__title" id="perguntas-titulo">Perguntas frequentes</h2>
+          </header>
+
+          <div class="faq" data-reveal>
+            <details class="faq__item" name="faq" open>
+              <summary class="faq__question">Como o VozFlow funciona?<svg class="icon faq__icon" aria-hidden="true"><use href="#i-plus" /></svg></summary>
+              <p class="faq__answer">É uma extensão do Chrome que funciona dentro do WhatsApp Web. Você salva áudios, mensagens e arquivos uma vez e envia para a conversa aberta com um clique.</p>
+            </details>
+            <details class="faq__item" name="faq">
+              <summary class="faq__question">O áudio chega como gravado na hora?<svg class="icon faq__icon" aria-hidden="true"><use href="#i-plus" /></svg></summary>
+              <p class="faq__answer">Sim. Chega como mensagem de voz, sem “encaminhado”, e o contato vê “gravando áudio…” antes de receber.</p>
+            </details>
+            <details class="faq__item" name="faq">
+              <summary class="faq__question">Tem limite de envios?<svg class="icon faq__icon" aria-hidden="true"><use href="#i-plus" /></svg></summary>
+              <p class="faq__answer">Não nos planos pagos. Nos agendamentos, você pode definir um limite diário para manter o ritmo natural.</p>
+            </details>
+            <details class="faq__item" name="faq">
+              <summary class="faq__question">Corro risco de ser banido do WhatsApp?<svg class="icon faq__icon" aria-hidden="true"><use href="#i-plus" /></svg></summary>
+              <p class="faq__answer">O VozFlow envia pela sua conta, do jeito que você faria, e não faz disparo em massa. O risco vem de spam: fale só com quem quer receber suas mensagens.</p>
+            </details>
+            <details class="faq__item" name="faq">
+              <summary class="faq__question">Funciona no WhatsApp Business?<svg class="icon faq__icon" aria-hidden="true"><use href="#i-plus" /></svg></summary>
+              <p class="faq__answer">Sim, no WhatsApp comum e no Business, pelo WhatsApp Web no Chrome do computador.</p>
+            </details>
+            <details class="faq__item" name="faq">
+              <summary class="faq__question">Posso usar em mais de um número?<svg class="icon faq__icon" aria-hidden="true"><use href="#i-plus" /></svg></summary>
+              <p class="faq__answer">O Essencial vale para 1 número e o Pro para até 3. Para trocar de número, é só chamar o suporte.</p>
+            </details>
+            <details class="faq__item" name="faq">
+              <summary class="faq__question">E se eu não gostar?<svg class="icon faq__icon" aria-hidden="true"><use href="#i-plus" /></svg></summary>
+              <p class="faq__answer">Você tem 7 dias para pedir o reembolso integral. Depois disso, pode cancelar quando quiser e usa até o fim do período pago.</p>
+            </details>
+            <details class="faq__item" name="faq">
+              <summary class="faq__question">O que acontece quando o teste acaba?<svg class="icon faq__icon" aria-hidden="true"><use href="#i-plus" /></svg></summary>
+              <p class="faq__answer">Os envios pausam até você assinar. Nada é cobrado automaticamente, porque o teste não pede cartão, e sua biblioteca continua salva no navegador.</p>
+            </details>
+            <details class="faq__item" name="faq">
+              <summary class="faq__question">Funciona no celular?<svg class="icon faq__icon" aria-hidden="true"><use href="#i-plus" /></svg></summary>
+              <p class="faq__answer">Não. O VozFlow é uma extensão do Chrome e funciona no WhatsApp Web, no computador (Windows, Mac ou Linux). Seu celular continua usando o WhatsApp normalmente.</p>
+            </details>
+            <details class="faq__item" name="faq">
+              <summary class="faq__question">É seguro? Vocês leem minhas conversas?<svg class="icon faq__icon" aria-hidden="true"><use href="#i-plus" /></svg></summary>
+              <p class="faq__answer">Não lemos suas conversas. Seus áudios, mensagens e contatos ficam no seu computador; nosso servidor recebe só o número conectado, para validar a licença.</p>
+            </details>
+            <details class="faq__item" name="faq">
+              <summary class="faq__question">Preciso deixar o computador ligado?<svg class="icon faq__icon" aria-hidden="true"><use href="#i-plus" /></svg></summary>
+              <p class="faq__answer">Só para os agendamentos: Chrome aberto e WhatsApp Web conectado. Os envios em 1 clique funcionam sempre que você estiver usando.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta" id="teste-gratis" aria-labelledby="cta-titulo">
+        <div class="cta__inner container" data-reveal>
+          <p class="cta__eyebrow">Seu próximo cliente está mandando mensagem agora</p>
+          <h2 class="cta__title" id="cta-titulo">Responda em segundos. Com a sua voz.</h2>
+          <div class="cta__actions">
+            <!-- Link provisório: substituir pela página da Chrome Web Store. -->
+            <a class="button button--primary button--large button--glow" href="https://chromewebstore.google.com/" rel="noopener" data-track="instalar">
+              <svg class="icon" aria-hidden="true"><use href="#i-chrome" /></svg>
+              Começar meu teste grátis
+            </a>
+            <!-- WhatsApp de suporte. -->
+            <a class="button button--ghost-light button--large" href="https://wa.me/5579998426046" rel="noopener">Tirar dúvidas no WhatsApp</a>
+          </div>
+          <p class="cta__note">3 dias grátis · sem cartão · 7 dias de garantia ao assinar</p>
+        </div>
+      </section>
+    </main>
+
+    <div class="activity" data-activity role="status" aria-live="polite" hidden>
+      <span class="activity__icon" aria-hidden="true"><svg class="icon"><use href="#i-check" /></svg></span>
+      <p class="activity__body">
+        <span class="activity__text" data-activity-text></span>
+        <span class="activity__meta"><span class="activity__badge" data-activity-badge></span><span class="activity__time" data-activity-time></span></span>
+      </p>
+      <button class="activity__close" type="button" aria-label="Fechar aviso" data-activity-close><svg class="icon icon--small" aria-hidden="true"><use href="#i-x" /></svg></button>
+      <span class="activity__progress" aria-hidden="true"></span>
+    </div>
+
+    <!-- WhatsApp de suporte. -->
+    <a class="whatsapp-float" data-track="whatsapp" href="https://wa.me/5579998426046?text=Ol%C3%A1!%20Tenho%20uma%20d%C3%BAvida%20sobre%20o%20VozFlow." rel="noopener" aria-label="Tirar dúvidas no WhatsApp">
+      <svg class="icon" aria-hidden="true"><use href="#i-chat" /></svg>
+      <span class="whatsapp-float__label">Dúvidas? Fale com a gente</span>
+    </a>
+
+    <div class="sticky-cta" data-sticky-cta>
+      <p class="sticky-cta__text"><strong>3 dias grátis</strong> · sem cartão</p>
+      <a class="button button--primary button--small" href="#teste-gratis">Testar grátis</a>
+    </div>
+
+    <footer class="footer">
+      <div class="footer__inner container">
+        <div class="footer__brand">
+          <a class="brand brand--light" href="/" aria-label="VozFlow, página inicial">
+            <img class="brand__symbol" src="/brand/vozflow-symbol.svg" alt="" width="32" height="32" loading="lazy" />
+            <span class="brand__name">VozFlow</span>
+          </a>
+          <p class="footer__tagline">Áudios, mensagens e funis para o WhatsApp Web.</p>
+          <a class="button button--primary button--small footer__cta" href="/#teste-gratis">Testar grátis</a>
+        </div>
+        <nav class="footer__nav" aria-label="Seções do site">
+          <ul class="footer__links">
+            <li><a class="footer__link" href="/">Início</a></li>
+            <li><a class="footer__link" href="/#recursos">Recursos</a></li>
+            <li><a class="footer__link" href="/#como-funciona">Como funciona</a></li>
+            <li><a class="footer__link" href="/#planos">Planos</a></li>
+            <li><a class="footer__link" href="/#perguntas">Dúvidas</a></li>
+            <li><a class="footer__link" href="/guias/">Guias</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer__bottom container">
+        <p class="footer__legal">
+          © <span data-year>2026</span> VozFlow. Extensão independente, sem vínculo com WhatsApp, Meta Platforms ou
+          Google.
+        </p>
+        <nav aria-label="Informações legais e contato">
+          <ul class="footer__meta">
+            <li><a class="footer__meta-link" href="/privacidade/">Privacidade</a></li>
+            <li><a class="footer__meta-link" href="/termos/">Termos</a></li>
+            <li><a class="footer__meta-link" href="/termos/#reembolso">Reembolso</a></li>
+            <li><a class="footer__meta-link" href="mailto:reverbolanz@gmail.com">Contato</a></li>
+            <!-- WhatsApp de suporte. -->
+            <li><a class="footer__meta-link" href="https://wa.me/5579998426046" rel="noopener">WhatsApp</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

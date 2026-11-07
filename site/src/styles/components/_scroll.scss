@@ -1,0 +1,65 @@
+@use '../abstracts' as *;
+
+// Efeitos de rolagem. Só agem depois que o script marca a página com .reveal-ready,
+// então o conteúdo aparece normalmente sem JavaScript ou com movimento reduzido.
+.reveal-ready [data-reveal] {
+  opacity: 0;
+  transform: translateY(1.5rem);
+  transition: opacity .6s ease, transform .6s ease;
+
+  &.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.progress {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 60;
+  height: 3px;
+  pointer-events: none;
+
+  &__bar {
+    display: block;
+    height: 100%;
+    background: $color-green;
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+}
+
+.sticky-cta {
+  position: fixed;
+  inset: auto 0 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $space-3;
+  padding: $space-3 $space-4;
+  background: $color-white;
+  border-top: 1px solid $color-border;
+  box-shadow: 0 -8px 24px rgba($color-navy, .1);
+  transform: translateY(110%);
+  visibility: hidden;
+  transition: transform .3s ease, visibility .3s;
+
+  &--visible {
+    transform: none;
+    visibility: visible;
+  }
+
+  @include min(md) {
+    display: none;
+  }
+
+  &__text {
+    font-size: .9375rem;
+    color: $color-muted;
+
+    strong {
+      color: $color-navy;
+    }
+  }
+}

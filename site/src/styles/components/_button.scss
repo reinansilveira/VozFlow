@@ -1,0 +1,88 @@
+@use '../abstracts' as *;
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-2;
+  min-height: 2.75rem;
+  padding: $space-3 $space-5;
+  font-weight: $font-weight-bold;
+  line-height: 1.2;
+  text-align: center;
+  border: 1px solid transparent;
+  border-radius: $radius-sm;
+  transition: background-color $transition, border-color $transition, color $transition;
+
+  // CTA principal: verde vibrante com texto escuro (contraste acima de 8:1).
+  &--primary {
+    color: $color-cta-text;
+    background: $color-cta;
+    box-shadow: 0 6px 20px rgba($color-cta, .35);
+
+    &:hover {
+      background: $color-cta-hover;
+    }
+  }
+
+  &--outline {
+    color: $color-navy;
+    background: $color-white;
+    border-color: $color-border;
+
+    &:hover {
+      border-color: $color-navy;
+    }
+  }
+
+  &--light {
+    color: $color-navy;
+    background: $color-white;
+
+    &:hover {
+      background: $color-green-soft;
+    }
+  }
+
+  &--ghost-light {
+    color: $color-white;
+    border-color: rgba($color-white, .4);
+
+    &:hover {
+      border-color: $color-white;
+    }
+  }
+
+  &--small {
+    min-height: 2.5rem;
+    padding: $space-2 $space-4;
+    font-size: .9375rem;
+  }
+
+  &--block {
+    width: 100%;
+  }
+
+  // Brilho pulsante para o CTA principal; só com movimento permitido.
+  &--glow {
+    @include motion {
+      animation: button-glow 2.4s ease-in-out infinite;
+    }
+  }
+
+  &--large {
+    min-height: 3.25rem;
+    padding: $space-4 $space-6;
+  }
+}
+
+@keyframes button-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba($color-cta, .55);
+  }
+
+  50% {
+    box-shadow: 0 0 0 .6rem rgba($color-cta, 0);
+  }
+}

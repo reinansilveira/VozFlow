@@ -1,0 +1,38 @@
+@use '../abstracts' as *;
+
+body {
+  min-height: 100vh;
+  color: $color-text;
+  background: $color-bg;
+  font-family: $font-family;
+  font-size: .9375rem;
+  line-height: 1.5;
+}
+
+:focus-visible {
+  @include focus-ring;
+}
+
+code {
+  font-family: $font-mono;
+  font-size: .85em;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.link-button {
+  padding: 0;
+  border: 0;
+  color: $color-green-dark;
+  background: none;
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+}

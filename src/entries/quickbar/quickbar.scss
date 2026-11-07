@@ -1,0 +1,450 @@
+@use '../../shared/styles/abstracts/variables' as *;
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  color: $color-confirm-text;
+  background: transparent;
+  font-family: Inter, Arial, sans-serif;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: .58;
+}
+
+.icon {
+  display: block;
+  width: 1em;
+  height: 1em;
+}
+
+.shortcut-modal {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  place-items: center;
+  overflow: auto;
+  background: rgba(18, 12, 35, .72);
+  backdrop-filter: blur(5px);
+  animation: shortcut-fade-in .16s ease-out;
+}
+
+.shortcut-panel {
+  display: flex;
+  width: min(634px, 100%);
+  max-height: min(760px, calc(100vh - 40px));
+  overflow: hidden;
+  flex-direction: column;
+  border: 1px solid rgba(255, 255, 255, .08);
+  border-radius: 27px;
+  background: $color-confirm-surface;
+  box-shadow: 0 32px 95px rgba(8, 4, 20, .55), 0 2px 8px rgba(0, 0, 0, .2);
+  animation: shortcut-panel-in .2s cubic-bezier(.2, .8, .2, 1);
+
+  &__header {
+    display: flex;
+    min-height: 88px;
+    padding: 22px 34px 12px;
+    align-items: center;
+    justify-content: space-between;
+
+    & > div {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 24px;
+      line-height: 31px;
+    }
+
+    & > button {
+      display: grid;
+      width: 34px;
+      height: 34px;
+      padding: 0;
+      place-items: center;
+      border: 0;
+      border-radius: 50%;
+      color: $color-confirm-muted;
+      background: transparent;
+
+      &:hover {
+        color: $white;
+        background: rgba(255, 255, 255, .08);
+      }
+
+      &:focus-visible {
+        outline: 2px solid #67e8f9;
+        outline-offset: 2px;
+      }
+
+      & > .icon {
+        width: 12px;
+        height: 12px;
+      }
+    }
+  }
+
+  &__info {
+    display: grid;
+    width: 26px;
+    height: 26px;
+    place-items: center;
+    color: #67e8f9;
+
+    & > .icon {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+
+.shortcut-confirm {
+  display: flex;
+  min-height: 0;
+  padding: 0 36px 28px;
+  flex: 1;
+  flex-direction: column;
+  overflow-y: auto;
+
+  &__summary {
+    margin: 0 0 10px;
+    color: $color-confirm-muted;
+    font-size: 12px;
+  }
+
+  &__status {
+    display: inline-flex;
+    min-height: 34px;
+    margin-top: 12px;
+    padding: 8px 12px;
+    align-items: center;
+    align-self: center;
+    gap: 7px;
+    border-radius: 9px;
+    color: $color-confirm-muted;
+    background: rgba(255, 255, 255, .06);
+    font-size: 11px;
+
+    &--success {
+      color: #bbf7d0;
+      background: rgba(34, 197, 94, .15);
+    }
+
+    &--error {
+      color: #fecaca;
+      background: rgba(239, 68, 68, .15);
+    }
+
+    & > .icon {
+      width: 11px;
+      height: 11px;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    gap: 18px;
+    margin-top: 24px;
+    justify-content: flex-end;
+  }
+}
+
+.shortcut-details {
+  margin: 0;
+
+  &__row {
+    display: grid;
+    min-height: 53px;
+    grid-template-columns: 180px minmax(0, 1fr);
+    gap: 10px;
+    padding: 10px 8px;
+    align-items: center;
+    border-bottom: 1px solid rgba(213, 204, 231, .62);
+
+    & > dt {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      color: $color-confirm-text;
+      font-size: 13px;
+      font-weight: 750;
+
+      & > .icon {
+        width: 14px;
+        height: 14px;
+        color: #c4b5fd;
+      }
+    }
+
+    & > dd {
+      display: flex;
+      min-width: 0;
+      margin: 0;
+      gap: 12px;
+      align-items: center;
+      color: $color-confirm-muted;
+      font-size: 12px;
+
+      & > strong,
+      & > small {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      & > strong {
+        color: $color-confirm-text;
+        font-weight: 650;
+      }
+
+      & > small {
+        color: #afa5c4;
+      }
+    }
+  }
+
+  &__avatar {
+    display: grid;
+    width: 36px;
+    height: 36px;
+    flex: 0 0 auto;
+    place-items: center;
+    border-radius: 50%;
+    color: $white;
+    background: $color-confirm-surface-deep;
+    font-size: 10px;
+    font-weight: 800;
+  }
+}
+
+.shortcut-guidance {
+  margin-top: 16px;
+  overflow: hidden;
+  border: 1px solid $color-confirm-border;
+  border-radius: 8px;
+
+  &__toggle {
+    display: grid;
+    width: 100%;
+    min-height: 68px;
+    grid-template-columns: 22px 1fr 14px;
+    gap: 12px;
+    padding: 14px 24px;
+    align-items: center;
+    border: 0;
+    color: $color-confirm-text;
+    background: transparent;
+    text-align: left;
+
+    &:hover {
+      background: rgba(255, 255, 255, .035);
+    }
+
+    &:focus-visible {
+      outline: 2px solid #67e8f9;
+      outline-offset: -3px;
+    }
+
+    & > .icon {
+      width: 19px;
+      height: 19px;
+      color: $color-confirm-muted;
+
+      &:last-child {
+        width: 11px;
+        height: 11px;
+        transition: transform .16s ease;
+      }
+    }
+  }
+
+  &--open &__toggle > .icon:last-child {
+    transform: rotate(180deg);
+  }
+
+  &__content {
+    display: grid;
+    max-height: 300px;
+    padding: 0 16px 16px;
+    gap: 12px;
+    overflow-y: auto;
+
+    &[hidden] {
+      display: none;
+    }
+  }
+
+  &__recommended,
+  &__warning {
+    padding: 13px 16px;
+    border-radius: 7px;
+
+    p {
+      display: flex;
+      margin: 0;
+      gap: 9px;
+      align-items: flex-start;
+      font-size: 11px;
+      line-height: 17px;
+
+      & + p {
+        margin-top: 7px;
+      }
+
+      & > .icon {
+        width: 12px;
+        height: 12px;
+        margin-top: 2px;
+        flex: 0 0 auto;
+      }
+    }
+  }
+
+  &__recommended {
+    color: $white;
+    background: #00bd68;
+  }
+
+  &__warning {
+    color: $white;
+    background: #ff9f0a;
+
+    & > strong {
+      display: block;
+      margin-bottom: 9px;
+      font-size: 11px;
+      text-align: center;
+    }
+  }
+}
+
+.shortcut-button {
+  display: inline-flex;
+  min-width: 112px;
+  min-height: 39px;
+  padding: 9px 18px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, .08);
+  border-radius: 18px;
+  color: $color-confirm-surface;
+  background: $color-confirm-action;
+  font-size: 11px;
+  font-weight: 750;
+  transition: transform .16s ease, box-shadow .16s ease, background-color .16s ease;
+
+  &:hover:not(:disabled) {
+    background: #eee8ff;
+    box-shadow: 0 6px 16px rgba(16, 9, 35, .25);
+    transform: translateY(-1px);
+  }
+
+  &--primary {
+    min-width: 136px;
+    background: #e8deff;
+  }
+
+  &:focus-visible {
+    outline: 2px solid #67e8f9;
+    outline-offset: 3px;
+  }
+}
+
+@keyframes shortcut-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes shortcut-panel-in {
+  from { opacity: 0; transform: translateY(12px) scale(.985); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@media (max-width: 640px) {
+  .shortcut-modal {
+    padding: 10px;
+    align-items: end;
+  }
+
+  .shortcut-panel {
+    max-height: calc(100vh - 20px);
+    border-radius: 22px 22px 14px 14px;
+
+    &__header {
+      min-height: 70px;
+      padding: 15px 18px 8px;
+
+      h2 {
+        font-size: 19px;
+      }
+    }
+  }
+
+  .shortcut-confirm {
+    padding: 0 18px 20px;
+  }
+
+  .shortcut-details__row {
+    min-height: 48px;
+    grid-template-columns: 116px minmax(0, 1fr);
+    padding: 8px 2px;
+
+    & > dt {
+      gap: 8px;
+      font-size: 11px;
+    }
+
+    & > dd {
+      gap: 7px;
+      font-size: 10px;
+    }
+  }
+
+  .shortcut-guidance__toggle {
+    min-height: 56px;
+    padding: 11px 15px;
+  }
+
+  .shortcut-confirm__actions {
+    gap: 10px;
+  }
+
+  .shortcut-button {
+    min-width: 0;
+    flex: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shortcut-modal,
+  .shortcut-panel {
+    animation: none;
+  }
+
+  .shortcut-button,
+  .shortcut-guidance__toggle > .icon:last-child {
+    transition: none;
+  }
+}

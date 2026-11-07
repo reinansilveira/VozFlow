@@ -1,0 +1,53 @@
+@use '../abstracts' as *;
+
+// Dores do atendimento manual.
+.pain {
+  display: grid;
+  gap: $space-4;
+
+  @include min(md) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @include min(lg) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  &__item {
+    @include card;
+
+    padding: $space-5;
+  }
+
+  &__icon {
+    display: inline-grid;
+    width: 2.75rem;
+    height: 2.75rem;
+    margin-bottom: $space-4;
+    place-items: center;
+    color: #b42318;
+    background: #fdecea;
+    border-radius: $radius-md;
+  }
+
+  &__title {
+    font-size: 1.125rem;
+    line-height: 1.3;
+  }
+
+  &__text {
+    margin-top: $space-2;
+    color: $color-muted;
+  }
+
+  &__bridge {
+    max-width: 40rem;
+    margin: $space-7 auto 0;
+    font-size: 1.25rem;
+    text-align: center;
+
+    strong {
+      color: $color-green-dark;
+    }
+  }
+}

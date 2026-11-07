@@ -1,0 +1,159 @@
+@use '../abstracts' as *;
+
+// Guias de conteúdo: reaproveitam o layout de leitura de .legal e somam trilha, modelos, CTA e lista de guias.
+.guide {
+  &__breadcrumb {
+    margin-bottom: $space-3;
+    font-size: .8125rem;
+    color: $color-muted;
+
+    ol {
+      display: flex;
+      flex-wrap: wrap;
+      gap: $space-1;
+    }
+
+    li + li::before {
+      margin-right: $space-1;
+      content: '/';
+    }
+
+    a {
+      color: $color-green-dark;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    // O último item repete o título; no celular, fica escondido para não ocupar duas linhas.
+    li:last-child {
+      display: none;
+
+      @include min(md) {
+        display: list-item;
+      }
+    }
+  }
+
+  .legal__content ol {
+    display: grid;
+    gap: $space-2;
+    padding-left: 1.25rem;
+    list-style: decimal;
+  }
+
+  .legal__content ol + p,
+  .legal__content blockquote + p {
+    margin-top: $space-3;
+  }
+
+  &__template {
+    padding: $space-3 $space-4;
+    margin-block: $space-2 $space-3;
+    color: $color-navy;
+    background: $color-green-soft;
+    border-left: 4px solid $color-green;
+    border-radius: 0 $radius-md $radius-md 0;
+  }
+
+  &__cta {
+    display: grid;
+    gap: $space-3;
+    justify-items: start;
+    padding: $space-5;
+    margin-top: $space-7;
+    color: $color-white;
+    background: $color-navy;
+    border-radius: $radius-lg;
+  }
+
+  // Sobe a especificidade para vencer os títulos de .legal__content.
+  & &__cta-title {
+    margin: 0;
+    font-size: 1.375rem;
+    color: $color-white;
+  }
+
+  &__cta-text {
+    color: rgba($color-white, .8);
+  }
+
+  &__related {
+    margin-top: $space-7;
+    padding-top: $space-5;
+    border-top: 1px solid $color-border;
+  }
+
+  // Página que reúne os guias.
+  &--hub {
+    padding-block: $space-6 $space-8;
+  }
+
+  &__hub-header {
+    max-width: $container-narrow;
+    margin-bottom: $space-6;
+  }
+
+  &__hub-title {
+    margin-bottom: $space-3;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: $font-weight-heavy;
+    line-height: 1.15;
+    color: $color-navy;
+  }
+
+  &__hub-lead {
+    font-size: 1.0625rem;
+    color: $color-muted;
+  }
+
+  &__cards {
+    display: grid;
+    gap: $space-4;
+
+    @include min(md) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  &__card {
+    @include card;
+
+    position: relative;
+    padding: $space-5;
+    transition: border-color .2s ease, box-shadow .2s ease;
+
+    &:hover,
+    &:focus-within {
+      border-color: $color-green;
+      box-shadow: $shadow-md;
+    }
+  }
+
+  &__card-title {
+    margin-bottom: $space-2;
+    font-size: 1.125rem;
+    font-weight: $font-weight-bold;
+    line-height: 1.35;
+    color: $color-navy;
+
+    // O link cobre o cartão inteiro.
+    a::after {
+      position: absolute;
+      inset: 0;
+      content: '';
+      border-radius: $radius-lg;
+    }
+
+    a:focus-visible {
+      outline: none;
+
+      &::after {
+        @include focus-ring;
+      }
+    }
+  }
+
+  &__card-text {
+    color: $color-muted;
+  }
+}

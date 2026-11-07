@@ -1,0 +1,49 @@
+@use '../abstracts' as *;
+
+// Aviso de cookies: "Recusar" e "Aceitar" com o mesmo destaque, como pede a LGPD.
+.consent {
+  position: fixed;
+  right: $space-4;
+  bottom: $space-4;
+  left: $space-4;
+  z-index: 70;
+  display: grid;
+  gap: $space-3;
+  max-width: 36rem;
+  padding: $space-4;
+  font-size: .9375rem;
+  background: $color-white;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  box-shadow: $shadow-lg;
+
+  @include min(md) {
+    right: auto;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+  }
+
+  &__text a {
+    font-weight: $font-weight-bold;
+    color: $color-green-dark;
+    text-decoration: underline;
+  }
+
+  &__actions {
+    display: flex;
+    gap: $space-2;
+
+    .button {
+      flex: 1 1 0;
+    }
+  }
+}
+
+.footer__meta-button {
+  padding: $space-1 0;
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}

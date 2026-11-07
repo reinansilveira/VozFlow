@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="pt-BR" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>document.documentElement.classList.remove('no-js');</script>
+    <title>Política de Privacidade — VozFlow</title>
+    <meta
+      name="description"
+      content="Como o VozFlow trata seus dados: o que coletamos, para quê, com quem compartilhamos, por quanto tempo guardamos e como exercer seus direitos pela LGPD."
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="color-scheme" content="light" />
+    <link rel="canonical" href="%SITE_URL%/privacidade/" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap"
+    />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/brand/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="VozFlow" />
+    <meta property="og:title" content="Política de Privacidade — VozFlow" />
+    <meta property="og:description" content="Como o VozFlow trata seus dados pessoais, em linguagem simples." />
+    <meta property="og:url" content="%SITE_URL%/privacidade/" />
+    <meta property="og:image" content="%SITE_URL%/brand/og-image.jpg" />
+
+    <script type="module" src="/src/main.ts"></script>
+  </head>
+  <body>
+    <svg class="sprite" aria-hidden="true" focusable="false">
+      <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" /></symbol>
+    </svg>
+
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <header class="header" data-header>
+      <div class="header__inner container">
+        <a class="brand" href="/" aria-label="VozFlow, página inicial">
+          <img class="brand__symbol" src="/brand/vozflow-symbol.svg" alt="" width="36" height="36" />
+          <span class="brand__name">VozFlow</span>
+        </a>
+
+        <button
+          class="header__toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="menu-principal"
+          aria-label="Abrir menu"
+          data-menu-toggle
+        >
+          <svg class="icon" aria-hidden="true"><use href="#i-menu" /></svg>
+        </button>
+
+        <nav class="nav" id="menu-principal" aria-label="Principal" data-menu>
+          <ul class="nav__list">
+            <li><a class="nav__link" href="/#recursos">Recursos</a></li>
+            <li><a class="nav__link" href="/#como-funciona">Como funciona</a></li>
+            <li><a class="nav__link" href="/#planos">Planos</a></li>
+            <li><a class="nav__link" href="/#perguntas">Dúvidas</a></li>
+          </ul>
+          <a class="button button--primary button--small nav__cta" href="/#teste-gratis">Testar grátis</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="conteudo" class="legal">
+      <div class="legal__layout container">
+        <header class="legal__header">
+          <p class="legal__eyebrow">Documentos legais</p>
+          <h1 class="legal__title">Política de Privacidade</h1>
+          <p class="legal__updated">Última atualização: 5 de novembro de 2026</p>
+        </header>
+
+        <aside class="legal__summary" aria-labelledby="resumo-titulo">
+          <h2 class="legal__summary-title" id="resumo-titulo">Resumo em 4 pontos</h2>
+          <ul class="legal__summary-list">
+            <li>Para controlar o teste e a licença, usamos o <strong>número do WhatsApp conectado</strong> e um código aleatório da instalação.</li>
+            <li><strong>Não lemos nem guardamos suas conversas</strong>, contatos, áudios ou mídias. Sua biblioteca fica só no seu computador.</li>
+            <li>Os dados da compra chegam pela Cakto; <strong>não recebemos CPF nem dados do cartão</strong>.</li>
+            <li>Você pode pedir acesso, correção ou exclusão dos seus dados a qualquer momento.</li>
+          </ul>
+        </aside>
+
+        <nav class="legal__toc" aria-labelledby="indice-titulo">
+          <h2 class="legal__toc-title" id="indice-titulo">Nesta página</h2>
+          <ol class="legal__toc-list">
+            <li><a href="#quem-somos">Quem somos</a></li>
+            <li><a href="#dados-coletados">Dados que tratamos</a></li>
+            <li><a href="#dados-locais">O que fica só no seu computador</a></li>
+            <li><a href="#finalidades">Para que usamos e bases legais</a></li>
+            <li><a href="#compartilhamento">Com quem compartilhamos</a></li>
+            <li><a href="#internacional">Transferência internacional</a></li>
+            <li><a href="#retencao">Por quanto tempo guardamos</a></li>
+            <li><a href="#direitos">Seus direitos</a></li>
+            <li><a href="#seguranca">Segurança</a></li>
+            <li><a href="#permissoes">Permissões da extensão</a></li>
+            <li><a href="#chrome-web-store">Uso Limitado (Chrome Web Store)</a></li>
+            <li><a href="#site">Este site</a></li>
+            <li><a href="#menores">Menores de idade</a></li>
+            <li><a href="#alteracoes">Alterações desta política</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ol>
+        </nav>
+
+        <article class="legal__content">
+          <section id="quem-somos">
+            <h2>1. Quem somos</h2>
+            <p>
+              O VozFlow é uma extensão para o Google Chrome que ajuda a enviar áudios, mensagens prontas, mídias, funis
+              e agendamentos no WhatsApp Web. O controlador dos dados pessoais tratados na extensão é o
+              próprio VozFlow ("VozFlow", "nós"), com atendimento pelo e-mail
+              <a href="mailto:reverbolanz@gmail.com">reverbolanz@gmail.com</a>.
+            </p>
+            <p>
+              Esta política vale para a extensão, para o site e para a compra e ativação de licenças. Ela segue a Lei
+              Geral de Proteção de Dados (Lei 13.709/2018, "LGPD").
+            </p>
+          </section>
+
+          <section id="dados-coletados">
+            <h2>2. Dados que tratamos</h2>
+            <h3>2.1. Quando você usa a extensão</h3>
+            <ul>
+              <li>
+                <strong>Número do WhatsApp conectado no WhatsApp Web</strong> (o seu número, não o dos seus contatos).
+                Ele é usado para liberar o teste grátis, vincular a licença e impedir que o mesmo número repita o teste.
+              </li>
+              <li>
+                <strong>Identificador da instalação</strong>: um código aleatório criado pela extensão no seu navegador.
+                Não identifica você diretamente; serve para limitar testes por computador.
+              </li>
+              <li><strong>Versão da extensão</strong>, para avisar quando uma atualização for obrigatória.</li>
+              <li>
+                <strong>Registros de acesso</strong>: endereço IP, data e hora de cada verificação feita pela extensão no
+                nosso servidor. A lei exige guardá-los (Marco Civil da Internet, art. 15) e também os usamos para limitar
+                tentativas abusivas.
+              </li>
+              <li>
+                <strong>Registros da licença</strong>: estado (ativa, suspensa, revogada, expirada), datas de ativação e
+                da última verificação e histórico de alterações.
+              </li>
+            </ul>
+
+            <h3>2.2. Quando você compra</h3>
+            <p>
+              O pagamento é feito na plataforma <strong>Cakto</strong>. Após a compra, a Cakto nos envia
+              <strong>nome, e-mail, telefone</strong>, identificador do pedido e da assinatura, oferta escolhida, valor,
+              forma de pagamento e datas (pagamento, reembolso, cancelamento). <strong>Não recebemos nem guardamos CPF,
+              endereço ou dados do cartão.</strong>
+            </p>
+
+            <h3>2.3. Quando você fala com o suporte</h3>
+            <p>
+              Tratamos as informações que você nos enviar (por exemplo, nome, número e a descrição do problema) apenas
+              para atender ao seu pedido.
+            </p>
+          </section>
+
+          <section id="dados-locais">
+            <h2>3. O que fica só no seu computador</h2>
+            <p>
+              A extensão funciona dentro do WhatsApp Web, no seu navegador. Para enviar uma mensagem na conversa aberta,
+              ela consulta o nome e o número desse contato <strong>localmente</strong>. Essas informações, o conteúdo das
+              conversas, seus contatos, a biblioteca de áudios, imagens, textos e documentos, os funis e os agendamentos
+              ficam armazenados no seu próprio navegador e <strong>não são enviados aos nossos servidores</strong>.
+            </p>
+            <p>
+              Se você desinstalar a extensão ou limpar os dados do navegador, essas informações locais são apagadas e não
+              temos como recuperá-las.
+            </p>
+          </section>
+
+          <section id="finalidades">
+            <h2>4. Para que usamos e bases legais</h2>
+            <div class="legal__table-wrap">
+              <table class="legal__table">
+                <thead>
+                  <tr><th scope="col">Finalidade</th><th scope="col">Dados</th><th scope="col">Base legal (LGPD, art. 7º)</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Liberar e controlar o teste grátis</td><td>Número, identificador da instalação</td><td>Procedimentos preliminares e execução de contrato (V)</td></tr>
+                  <tr><td>Ativar e validar a licença</td><td>Número, identificador da instalação, registros da licença</td><td>Execução de contrato (V)</td></tr>
+                  <tr><td>Entregar a chave e prestar suporte</td><td>Nome, e-mail, telefone, dados do pedido</td><td>Execução de contrato (V)</td></tr>
+                  <tr><td>Prevenir fraude e abuso do teste, inclusive após reembolso ou chargeback</td><td>Número, telefone da compra, IP, identificador da instalação</td><td>Legítimo interesse (IX)</td></tr>
+                  <tr><td>Mostrar no site avisos anônimos de atividade recente ("alguém de Sergipe assinou o Pro")</td><td>Plano, estado derivado do DDD e horário; nunca nome, número ou e-mail</td><td>Legítimo interesse (IX)</td></tr>
+                  <tr><td>Medir anúncios com Meta Pixel e Google Analytics</td><td>Cookies, navegador, IP, páginas e cliques no site</td><td>Consentimento (I), pelo aviso de cookies</td></tr>
+                  <tr><td>Guardar registros de acesso, como exige o Marco Civil da Internet</td><td>IP, data e hora, número e identificador da instalação</td><td>Obrigação legal (II)</td></tr>
+                  <tr><td>Cumprir obrigações legais e fiscais e defender direitos</td><td>Dados do pedido e registros da licença</td><td>Obrigação legal (II) e exercício regular de direitos (VI)</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p>Não usamos seus dados para publicidade, não vendemos dados e não criamos perfis de comportamento.</p>
+          </section>
+
+          <section id="compartilhamento">
+            <h2>5. Com quem compartilhamos</h2>
+            <ul>
+              <li>
+                <strong>Supabase</strong>: provedor de banco de dados e servidores onde ficam os registros de teste e
+                licença. Atua como operador, seguindo nossas instruções.
+              </li>
+              <li>
+                <strong>Cakto</strong>: plataforma de pagamento, responsável pelos dados que você informa no checkout,
+                conforme a política de privacidade dela.
+              </li>
+              <li>
+                <strong>Meta Platforms e Google</strong>: só se você aceitar os cookies do site, para medir anúncios
+                (Meta Pixel e Google Analytics), conforme as políticas de cada uma.
+              </li>
+              <li><strong>Autoridades</strong>, quando houver obrigação legal ou ordem judicial.</li>
+            </ul>
+            <p>Dados da extensão (número, licença, biblioteca) nunca são compartilhados com o WhatsApp, a Meta ou o Google.</p>
+          </section>
+
+          <section id="internacional">
+            <h2>6. Transferência internacional</h2>
+            <p>
+              Os servidores dos nossos fornecedores podem ficar fora do Brasil. Nesses casos, a transferência ocorre nas
+              hipóteses do art. 33 da LGPD, com fornecedores que adotam cláusulas contratuais e medidas de segurança
+              compatíveis com a lei.
+            </p>
+          </section>
+
+          <section id="retencao">
+            <h2>7. Por quanto tempo guardamos</h2>
+            <ul>
+              <li><strong>Registros de acesso</strong> (IP, data e hora): 6 meses, prazo do art. 15 do Marco Civil da Internet. Só são entregues a terceiros por ordem judicial.</li>
+              <li><strong>Licença, ativações e dados da compra</strong>: enquanto a licença estiver ativa e por até 5 anos depois, para obrigações legais e defesa de direitos.</li>
+              <li><strong>Registro do teste grátis</strong> (número e identificador da instalação): até 5 anos após o teste, para impedir que o mesmo número repita o teste.</li>
+              <li><strong>Lista de números bloqueados</strong> (abuso, reembolso ou chargeback): enquanto durar o motivo do bloqueio, limitado a 5 anos.</li>
+              <li><strong>Conversas de suporte</strong>: até 1 ano após o atendimento.</li>
+              <li><strong>Dados de medição de anúncios</strong> (com consentimento): até 14 meses no Google Analytics e conforme a política da Meta no Pixel.</li>
+            </ul>
+            <p>Terminados esses prazos, os dados são apagados ou anonimizados.</p>
+          </section>
+
+          <section id="direitos">
+            <h2>8. Seus direitos</h2>
+            <p>Pela LGPD (art. 18), você pode pedir a qualquer momento:</p>
+            <ul>
+              <li>confirmação de que tratamos seus dados e acesso a eles;</li>
+              <li>correção de dados incompletos ou desatualizados;</li>
+              <li>anonimização, bloqueio ou eliminação de dados desnecessários ou tratados em desconformidade;</li>
+              <li>portabilidade dos dados;</li>
+              <li>informação sobre com quem compartilhamos;</li>
+              <li>revisão de decisões automatizadas, como o bloqueio de um número;</li>
+              <li>oposição a tratamentos baseados em legítimo interesse.</li>
+            </ul>
+            <p>
+              Envie o pedido para o contato da seção 15, a partir do e-mail ou do número usado na compra. Respondemos em
+              até 15 dias. Alguns dados podem ser mantidos quando a lei exigir; nesse caso, explicamos o motivo. Você
+              também pode reclamar à Autoridade Nacional de Proteção de Dados (ANPD).
+            </p>
+          </section>
+
+          <section id="seguranca">
+            <h2>9. Segurança</h2>
+            <p>
+              Usamos conexão criptografada (HTTPS), acesso ao painel administrativo restrito e com verificação em duas
+              etapas, autorização da licença assinada digitalmente e coleta do mínimo necessário. Nenhum sistema é
+              totalmente imune a falhas; se ocorrer um incidente que traga risco relevante, avisaremos você e a ANPD.
+            </p>
+          </section>
+
+          <section id="permissoes">
+            <h2>10. Permissões da extensão</h2>
+            <ul>
+              <li><strong>Acesso a web.whatsapp.com</strong>: mostrar os atalhos e enviar as mensagens na conversa aberta.</li>
+              <li><strong>storage</strong>: guardar sua biblioteca, configurações e o estado da licença no navegador.</li>
+              <li><strong>alarms</strong>: disparar agendamentos e renovar a verificação da licença.</li>
+              <li><strong>tabs e scripting</strong>: localizar a aba do WhatsApp Web e abrir o painel do VozFlow.</li>
+            </ul>
+          </section>
+
+          <section id="chrome-web-store">
+            <h2>11. Uso Limitado (Chrome Web Store)</h2>
+            <p>
+              O uso e a transferência das informações recebidas pela extensão seguem a
+              <a href="https://developer.chrome.com/docs/webstore/program-policies/user-data-faq" rel="noopener">Política de Dados do Usuário da Chrome Web Store</a>,
+              incluindo os requisitos de Uso Limitado: os dados são usados apenas para oferecer e melhorar a função
+              única da extensão, não são vendidos, não são usados para publicidade nem para avaliar crédito, e não são
+              lidos por pessoas, exceto com seu consentimento, para segurança, por obrigação legal ou de forma agregada e
+              anônima.
+            </p>
+          </section>
+
+          <section id="site">
+            <h2>12. Este site</h2>
+            <p>
+              <strong>Cookies de medição, só com o seu consentimento.</strong> Na primeira visita, um aviso pergunta se
+              você aceita cookies. Se aceitar, carregamos o Meta Pixel (Meta Platforms) e o Google Analytics (Google)
+              para medir nossos anúncios: páginas visitadas e cliques em "testar grátis", "assinar" e "WhatsApp",
+              ligados a identificadores de cookie, ao navegador e ao endereço IP. Se recusar, nada disso é carregado.
+              Você pode mudar a escolha a qualquer momento no link "Cookies" do rodapé.
+            </p>
+            <p>
+              Para exibir a fonte do texto, o seu navegador baixa arquivos do Google Fonts, que recebe o seu endereço IP
+              conforme a política do Google. O vídeo de apresentação é servido pelo próprio site.
+            </p>
+          </section>
+
+          <section id="menores">
+            <h2>13. Menores de idade</h2>
+            <p>O VozFlow é destinado a maiores de 18 anos e não coleta intencionalmente dados de crianças ou adolescentes.</p>
+          </section>
+
+          <section id="alteracoes">
+            <h2>14. Alterações desta política</h2>
+            <p>
+              Podemos atualizar esta política. A data no topo indica a versão em vigor. Mudanças relevantes serão
+              avisadas no site ou na extensão antes de entrarem em vigor.
+            </p>
+          </section>
+
+          <section id="contato">
+            <h2>15. Contato</h2>
+            <p>
+              Para exercer seus direitos, tirar dúvidas ou fazer reclamações sobre seus dados, escreva para
+              <a href="mailto:reverbolanz@gmail.com">reverbolanz@gmail.com</a>.
+            </p>
+            <p>
+              Como agente de tratamento de pequeno porte, o VozFlow está dispensado de indicar um encarregado
+              (Resolução CD/ANPD nº 2/2022, art. 11). O e-mail acima é o canal de comunicação com os titulares e com a
+              ANPD.
+            </p>
+          </section>
+
+          <p class="legal__related">Veja também os <a href="/termos/">Termos de Uso</a>.</p>
+        </article>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__inner container">
+        <div class="footer__brand">
+          <a class="brand brand--light" href="/" aria-label="VozFlow, página inicial">
+            <img class="brand__symbol" src="/brand/vozflow-symbol.svg" alt="" width="32" height="32" loading="lazy" />
+            <span class="brand__name">VozFlow</span>
+          </a>
+          <p class="footer__tagline">Áudios, mensagens e funis para o WhatsApp Web.</p>
+          <a class="button button--primary button--small footer__cta" href="/#teste-gratis">Testar grátis</a>
+        </div>
+        <nav class="footer__nav" aria-label="Seções do site">
+          <ul class="footer__links">
+            <li><a class="footer__link" href="/">Início</a></li>
+            <li><a class="footer__link" href="/#recursos">Recursos</a></li>
+            <li><a class="footer__link" href="/#como-funciona">Como funciona</a></li>
+            <li><a class="footer__link" href="/#planos">Planos</a></li>
+            <li><a class="footer__link" href="/#perguntas">Dúvidas</a></li>
+            <li><a class="footer__link" href="/guias/">Guias</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer__bottom container">
+        <p class="footer__legal">
+          © <span data-year>2026</span> VozFlow. Extensão independente, sem vínculo com WhatsApp, Meta Platforms ou
+          Google.
+        </p>
+        <nav aria-label="Informações legais e contato">
+          <ul class="footer__meta">
+            <li><a class="footer__meta-link" href="/privacidade/" aria-current="page">Privacidade</a></li>
+            <li><a class="footer__meta-link" href="/termos/">Termos</a></li>
+            <li><a class="footer__meta-link" href="/termos/#reembolso">Reembolso</a></li>
+            <li><a class="footer__meta-link" href="mailto:reverbolanz@gmail.com">Contato</a></li>
+            <!-- WhatsApp de suporte. -->
+            <li><a class="footer__meta-link" href="https://wa.me/5579998426046" rel="noopener">WhatsApp</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>
